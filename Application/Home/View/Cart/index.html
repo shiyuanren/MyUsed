@@ -1,0 +1,11 @@
+<extend name='Public:ubase'/>
+
+<block name="navigation">
+	<script src="__JS__/cart.js"></script>
+	<foreach name="cart_data" item="cd">
+		<div class="goods-item">
+			<a>商品名称：{$key}</a>&nbsp;&nbsp;&nbsp;&nbsp;<a>商品数量：{$cd}</a>
+		</div>	
+	</foreach>
+	<input id="toOrder" type="button" value="结算"/>
+</block>

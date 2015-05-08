@@ -1,0 +1,43 @@
+
+ 
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/Css/user.css" />
+<script src="__STATIC__/jquery-2.1.3.min.js"></script>
+</head>
+<body>
+
+<include file="Public:userHeader"/>
+
+<form  id="login_form" action="{:U('Home/User/login')}"  method="post">
+用户名<input id="username" type='text' name='username'/><br>
+密码<input id="pwd" type='password' name='pwd'/><br>
+<input id='btn' type='button' value="登录"/>
+</form>
+
+<include file="Public:userFooter"/>
+<script>
+$(function(){
+	
+	$('#btn').click(function(){
+		//var $uname = $('#username').val();
+		//var $pwd = $('#pwd').val();
+		var sent_msg=$('#login_form').serialize();
+		
+		//console.log(sent_msg);
+		//$.post("{:U('Home/User/register')}");
+		var $action = $('#login_form').attr('action');
+		
+		$.post($action,sent_msg,function(data){
+			console.log(data.msg);
+			//$('#notice').html(data.msg);
+		});
+	})
+	
+})
+	
+	
+</script>
+</body>
+</html>

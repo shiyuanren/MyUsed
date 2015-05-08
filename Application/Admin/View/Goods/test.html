@@ -1,0 +1,55 @@
+<extend name="Public:base"/>
+<block name="navigation">
+	<ul>
+		<li>商品管理
+			<ul>
+				<li><a href="{:U('Goods/add')}">新增商品</a></li>
+				<li><a href="{:U('Goods/lists')}">商品列表</a></li>
+				<li><a href="{:U('Category/lists')}">商品分类</a></li>
+			</ul>
+		</li>
+	</ul>
+</block>
+
+<block name="content">
+
+<link href="__STATIC__/fileinput/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
+<script src="__STATIC__/fileinput/js/fileinput.min.js"></script>
+<script src="__STATIC__/fileinput/js/fileinput_locale_zh.js"></script>
+
+<div class="row">
+  <div class="col-md-6">
+  	<input id="input-1" type="file" name="photo[]" multiple="true" class="file-loading"/>
+
+  </div>
+
+
+
+  <div class="col-md-6">.col-md-6</div>
+</div>
+
+
+	<script>
+	$('#input-1').fileinput({
+
+		overwriteInitial:true,
+		uploadUrl:"upload",
+		uploadAsync:true,
+		maxFileCount:1,
+		maxFileCount:5,
+
+		/*initialPreview: [
+		    "<img src='__STATIC__/fileinput/img/preview.gif'>",
+		    "<img src='__STATIC__/fileinput/img/preview.gif'>",
+		    "<img src='__STATIC__/fileinput/img/preview.gif'>",
+		    "<img src='__STATIC__/fileinput/img/preview.gif''>",
+		    "<img src='__STATIC__/fileinput/img/preview.gif'>",
+		],*/
+	});
+	/*.on("filebatchselected",function(event,files){
+			$input.fileinput("upload");
+	}
+)*/
+
+	</script>
+</block>

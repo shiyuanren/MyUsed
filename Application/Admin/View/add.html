@@ -1,0 +1,136 @@
+<extend name="Public:base"/>
+<block name="navigation">
+	<ul>
+		<li>商品管理
+			<ul>
+				<li><a href="{:U('Goods/add')}">新增商品</a></li>
+				<li><a href="{:U('Goods/lists')}">商品列表</a></li>
+				<li><a href="{:U('Category/lists')}">商品分类</a></li>
+			</ul>
+		</li>
+	</ul>
+</block>
+
+<block name="content">
+
+
+	<div class="pull-left col-md-3">
+	</div>
+
+	<div class="pull-left col-md-9">
+				
+
+<form class="form-inline" action="{:U('add')}" method="post" enctype="multipart/form-data">
+
+
+    <fieldset>
+      <div id="legend" class="">
+        <legend class="">新增商品</legend>
+      </div>
+
+
+     <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">商品名称：</label>
+         <!--  <div class="controls"> -->
+            <input type="text" name="product_name" placeholder="" class="input-xlarge" required="required" size="48">
+            <p class="help-block"></p>
+        <!--   </div> -->
+        </div><hr/>
+
+
+
+    <div class="control-group">
+
+          <!-- Textarea -->
+          <label class="control-label">详细信息：</label>
+    
+            <!-- <div class="textarea"> -->
+                  <textarea type="" name="description" rows=4  cols="50" required="required"> </textarea>
+            <!-- </div> -->
+
+        </div><hr/>
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">商品价格：</label>
+         <!--  <div class="controls"> -->
+            <input type="text" name="price" class="input-xlarge" required="required">
+            <!-- <p class="help-block"></p> -->
+        <!--   </div> -->
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">商品数量：</label>
+         <!--  <div class="controls"> -->
+            <input type="number" name="quantity" class="input-xlarge" min='1' max='50' required="required">
+            <p class="help-block"></p>
+          <!-- </div> -->
+        </div><hr/>
+
+    <div class="control-group">
+          <label class="control-label">上传图片</label>
+
+          <!-- File Upload -->
+          <!-- <div class="controls"> -->
+            <img src="__IMG__/image/no_image-100x100.jpg" alt="" class="img-rounded">
+            <input class="input-file" name="photo1" id="photo1" type="file" multiple="true">
+          <!-- </div> -->
+        </div><hr/>
+
+    <div class="control-group">
+
+          <!-- Select Basic -->
+          <label class="control-label">商品分类</label>
+          <!-- <div class="controls"> -->
+            <select class="input-xlarge" name="select" onclick="getCategories()">
+
+            	<foreach name="category_lists" item="cl">
+            		 <option value="{$key}">{$cl}</option>
+            	</foreach>
+     <!--  <option>Enter</option>
+      <option>Your</option>
+      <option>Options</option>
+      <option>Here!</option> -->
+  			</select>
+          <!-- </div> -->
+
+        </div><hr/>
+
+   <!--  <div class="control-group">
+          <label class="control-label"></label> -->
+
+          <!-- Button -->
+          <!-- <div class="controls"> -->
+            <button class="btn btn-primary" type="submit">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- </div> -->
+       <!--  </div>
+	
+    <div class="control-group">
+          <label class="control-label"></label> -->
+
+          <!-- Button -->
+          <!-- <div class="controls"> -->
+            <button type="reset" class="btn btn-primary">重置</button>
+          <!-- </div> -->
+        <!-- </div> -->
+
+    </fieldset>
+  </form>
+	</div>
+
+ <script>
+		function addGoods(){
+			var slt=document.getElementById("select1");
+			$.post('Category/lists',{},function(data){
+
+			});
+		}
+
+</script>
+
+ 
+</block>

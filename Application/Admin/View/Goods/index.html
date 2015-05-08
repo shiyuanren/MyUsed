@@ -1,0 +1,18 @@
+<input id="input-705" name="kartik-input-705[]" type="file" multiple class="file-loading">
+<h3><span class="label label-default">Code</span></h3><pre class="prettyprint linenums">
+
+<input id="input-705" name="kartik-input-705[]" type="file" multiple class="file-loading">
+<script>
+var $input = $("#input-705");
+$input.fileinput({
+    uploadUrl: "http://localhost/file-upload-batch/2", // server upload action
+    uploadAsync: false,
+    showUpload: false, // hide upload button
+    showRemove: false, // hide remove button
+    minFileCount: 1,
+    maxFileCount: 5
+}).on("filebatchselected", function(event, files) {
+    // trigger upload method immediately after files are selected
+    $input.fileinput("upload");
+});
+</script>

@@ -1,0 +1,49 @@
+
+
+
+<extend name="Public:newBase"/>
+
+<block name="content">
+    <div class="inner">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2> 会员管理 </h2>
+			</div>
+
+			<div class="col-lg-4">
+			</br>
+				<form role="form" id='register_form' action="{:U('User/detail')}" method='post'>
+				<div><input type="search" name="search_user" placeholder="昵称"/> &nbsp;&nbsp;&nbsp;<button type="submit" >查找</button></div>
+				
+				</form>
+			</div>
+        </div>
+
+                <hr />
+    	<div class="row">
+		    <div class="col-lg-12">
+		        <div class="box">
+		            <header class="dark">
+		                <div class="icons"><i class="icon-cloud-upload"></i></div>
+		                <h5>会员详情</h5>
+		            </header>
+		            <div class="body">
+		    			<br/><br/>
+	<ul>
+		<li>id:{$userInfo.id}</li>
+		<li>昵称：{$userInfo.uname}</li>
+		<li>手机号：{$userInfo.phone_num}</li>
+		<li>微信号：{$userInfo.wechat}</li>
+		<li>ip地址：{$userInfo.ip}</li>
+		<li>注册时间：{$userInfo.create_time|date="Y-m-d H:i:s",###}</li>
+		<li>最后登录时间：{$userInfo.last_time|date="Y-m-d H:i:s",###}</li>
+	</ul>
+		            </div>
+		        </div>
+		    </div>
+        </div>
+    </div>
+
+         <!--END PAGE CONTENT -->
+
+</block>

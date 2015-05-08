@@ -1,0 +1,149 @@
+<extend name='Public:base1'/>
+
+
+
+<block name="middle">
+ <script src="__STATIC__/jquery-2.1.3.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="__CSS__/release.css">
+	<div class="default-bg space">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h1 class="text-center">10000+ Happy Clients!</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="hero-unit">
+				<div class="section">
+		<div class="container">
+
+			<form enctype="multipart/form-data" class="form-horizontal" action="{:U('release')}" method="post">
+
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-6">
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-md-2 control-label"></label>
+					<!-- <div class="col-md-1"></div> -->
+					<div class="col-md-4">
+						<div id="uploadPreview"></br></br>请上传商品小图</div>
+
+						<input type="file" id="uploadImage" name="photoimage" class="fimg1" onchange="PreviewImage();" />
+					</div>
+
+				</div>
+
+
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-md-2 control-label">商品名称</label>
+					<div class="col-md-8">
+						<input type="text" name="product_name" class="form-control" id="inputEmail3" placeholder="name">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-md-2 control-label">选择分类</label>
+					<div class="col-md-2">
+						<select class="input-xlarge" name="select">
+
+							<foreach name="category_lists" item="cl">
+								<option value="{$key}">{$cl}</option>
+							</foreach>
+						</select>
+					</div>
+				</div>
+
+				
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-md-2 control-label">预估价格</label>
+					<div class="col-md-6">
+						<input type="text" name="price" class="form-control"  id="inputEmail3" placeholder="price">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-md-2 control-label">数量</label>
+					<div class="col-md-6">
+						<input type="number" name="quantity" class="form-control" id="inputEmail3" placeholder="quantity">
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-md-2 control-label">商品详情</label>
+					<div class="col-md-4">
+						<textarea name="description" rows="4" cols="38" placeholder="description"></textarea>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-10">
+						<button type="submit" class="btn btn-default">下一步</button>
+					</div>
+				</div>
+		</div>
+		<div class="col-md-5">
+			<div class="form-group">
+					<label for="inputEmail3" class="col-md-3 control-label">联系人</label>
+					<div class="col-md-8">
+						<input type="text" name="product_name" class="form-control" id="inputEmail3" placeholder="name">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputEmail3" class="col-md-3 control-label">联系方式</label>
+					<div class="col-md-8">
+						<input type="text" name="product_name" class="form-control" id="inputEmail3" placeholder="name">
+					</div>
+				</div>
+		</div>
+
+	</div>
+			</form>
+		</div>
+	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+
+
+<script>
+	$("#uploadImage").on("change", function(){
+    // Get a reference to the fileList
+    var files = !!this.files ? this.files : [];
+  
+    // If no files were selected, or no FileReader support, return
+    if (!files.length || !window.FileReader) return;
+  
+    // Only proceed if the selected file is an image
+    if (/^image/.test( files[0].type)){
+  
+        // Create a new instance of the FileReader
+        var reader = new FileReader();
+  
+        // Read the local file as a DataURL
+        reader.readAsDataURL(files[0]);
+  
+        // When loaded, set image data as background of div
+        reader.onloadend = function(){
+   
+       $("#uploadPreview").css("background-image", "url("+this.result+")");
+         
+        }
+  
+    }
+  
+});
+</script>
+
+
+</block>

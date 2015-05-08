@@ -1,0 +1,11 @@
+<!-- <extend name='Public:ubase'/>
+
+<block name="navigation">
+		<foreach name="goods_list.lists" item="gl">
+			<div class="goods-item">
+				<a href="{:U('Goods/detail',array('id'=>$gl['id']))}">{$gl.product_name}</a>
+			</div>
+		</foreach>
+		{$goods_list.page}
+</block>
+-->

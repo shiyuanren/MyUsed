@@ -1,0 +1,64 @@
+<extend name='Public:base1'/>
+
+<block name="middle">
+	<script src="__STATIC__/jquery-2.1.3.min.js"></script>
+	<link href="__STATIC__/fileinput/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
+	<script src="__STATIC__/fileinput/js/fileinput.min.js"></script>
+	<script src="__STATIC__/fileinput/js/fileinput_locale_zh.js"></script>
+
+	<div class="default-bg space">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h1 class="text-center">10000+ Happy Clients!</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+
+				<div class="row">
+
+					<div class="col-md-1"></div>
+					<div class="col-md-10">
+						<!-- <form class="form-horizontal" action="{:U('release')}" method="post" enctype="multipart/form-data"> -->
+						<input id="input-1" type="file" name="photo[]" multiple="true" class="file-loading"/>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+
+				<br/><br/>
+				<div class="row">
+					<div class="col-md-6"></div>
+					<div class="col-md-2">
+						<!-- <button type="submit" class="btn btn-default">继续发布</button> -->
+						<a href="{:U('release')}"  class="btn btn-default" role="button">继续发布</a>
+					</div>
+					<div class="col-md-4">
+						<!-- <button type="submit" class="btn btn-default">返回我的二手书页面</button> -->
+						 <a href="{:U('User/mybooks')}"  class="btn btn-default" role="button">返回我的二手书页面</a>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+<script></script>
+<script>
+$('#input-1').fileinput({
+
+	overwriteInitial:true,
+	uploadUrl:"#",
+	uploadAsync:true,
+	maxFileCount:1,
+	maxFileCount:5,
+}
+
+);
+
+</script>
+
+</block>

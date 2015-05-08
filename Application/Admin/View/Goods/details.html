@@ -1,0 +1,49 @@
+
+
+
+<extend name="Public:newBase"/>
+
+<block name="content">
+    <div class="inner">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2> 商品管理 </h2>
+			</div>
+
+			<div class="col-lg-4">
+			</br>
+				<form role="form" id='register_form' action="{:U('User/detail')}" method='post'>
+				<div><input type="search" name="search_user" placeholder="昵称"/> &nbsp;&nbsp;&nbsp;<button type="submit" >查找</button></div>
+				
+				</form>
+			</div>
+        </div>
+
+                <hr />
+    	<div class="row">
+		    <div class="col-lg-12">
+		        <div class="box">
+		            <header class="dark">
+		                <div class="icons"><i class="icon-cloud-upload"></i></div>
+		                <h5>商品详情</h5>
+		            </header>
+		            <div class="body">
+		    			<br/><br/>
+	<ul>
+		<!-- <li>id:{$userInfo.id}</li> -->
+		<li>商品名称：{$info.product_name}</li>
+		<li>详细介绍：{$info.description}</li>
+		<li>商品价格：{$info.price}</li>
+		<li>商品数量：{$info.quantity}</li>
+		<li>商品小图：{$info.photo}</li>
+		<!-- <li>商品大图：{$info.last_time|date="Y-m-d H:i:s",###}</li> -->
+	</ul>
+		            </div>
+		        </div>
+		    </div>
+        </div>
+    </div>
+
+         <!--END PAGE CONTENT -->
+
+</block>

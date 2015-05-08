@@ -1,0 +1,21 @@
+<extend name='Public:base1'/>
+
+
+<block name="middle">
+<div class="section">
+		<div class="container">
+			
+	我的二手书页面，这里是我发布的二手书的列表
+	<foreach name="booksList.books" item="bl">
+		<div class="goods-item">
+			<a href="{:U('Goods/detail',array('id'=>$gl['id']))}">{$bl.product_name}</a>
+		</div>
+	</foreach>
+	{$booksList.page}
+	
+	<a class="registerbtn" href="{:U('Home/Goods/release')}">发布二手书</a>
+
+	</div>
+	</div>
+	
+</block>

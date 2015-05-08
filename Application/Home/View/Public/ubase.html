@@ -1,0 +1,72 @@
+
+<html>
+	<head>
+		<title>99m商城</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+		<link rel="stylesheet" href="__STATIC__/bootstrap/css/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="__CSS__/user.css" />
+		<link rel="stylesheet" type="text/css" href="__CSS__/user1.css">
+		<script src="__STATIC__/jquery-2.1.3.min.js"></script>
+		<script src="__STATIC__/bootstrap/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+
+	<div class="container-fluid head">
+		<div class="row">
+		  	<block name="header">
+	<div class="head-box">	
+		<a class="registerbtn" href="{:U('Home/User/login')}">登录</a>
+		<a class="registerbtn" href="{:U('Home/User/register')}">注册</a>
+
+		<a class="registerbtn" href="{:U('Home/User/mybooks')}">我的二手书</a>
+		
+</div>
+</block>
+		</div>
+	</div>
+
+	<div class="container-fluid  middle">
+		<div class="row">
+			<div class="pull-left col-md-2 left">
+				<block name="m1">
+				
+				</block>
+			</div>
+
+			<div class="pull-left col-md-8 left">
+				<block name="navigation">
+					产品展示区
+				</block>
+			</div>
+
+			<div class="pull-left col-md-2 left">
+				<block name="m2">
+				
+				</block>
+			</div>
+
+		</div>
+	</div>
+
+
+		
+	<!-- <div class="container-fluid foot">
+	  <div class="row">
+	  	<block name="footer">
+	<div class="footwrap" align="center">
+	<div><p>Copyright 2012-2014 www.99mi.com All Rights Reserved 京ICP备13035787号</p></div>
+	<div class="foot-img" align="center">
+		<img src="__PUBLIC__/Img/zj_01.jpg"/>
+		<img src="__PUBLIC__/Img/zj_02.jpg"/>
+		<img src="__PUBLIC__/Img/zj_03.jpg"/>
+		<img src="__PUBLIC__/Img/zj_04.jpg"/>
+		<img src="__PUBLIC__/Img/zj_05.jpg"/>
+	</div> -->
+</div>
+</block>
+	  </div>
+	</div>
+
+	</body>
+</html>

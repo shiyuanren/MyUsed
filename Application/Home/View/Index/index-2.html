@@ -1,0 +1,115 @@
+<extend name='Public:base1'/>
+<block name="middle">
+
+	<script src="__STATIC__/jquery-2.1.3.min.js"></script>
+	<link href="__STATIC__/fileinput/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
+	<script src="__STATIC__/fileinput/js/fileinput.min.js"></script>
+	<script src="__STATIC__/fileinput/js/fileinput_locale_zh.js"></script>
+
+	<div id="banner" class="banner">
+			<div class="banner-image"></div>
+			<div class="banner-caption">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 object-non-visible" data-animation-effect="fadeIn">
+							<h1 class="text-center">We are <span>Worthy</span></h1>
+							<p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos debitis provident nulla illum minus enim praesentium repellendus ullam cupiditate reiciendis optio voluptatem, recusandae nobis quis aperiam, sapiente libero ut at.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<div class="container-fluid" id="LG">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="tabbable" id="tabs-8838">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#panel-1" data-toggle="tab">商品详情</a>
+					</li>
+					<li class="active">
+						<a href="#panel-2" data-toggle="tab">上传大图</a>
+					</li>
+					<li>
+						<a href="#panel-3" data-toggle="tab">卖家联系方式</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-1">
+						<p>
+							商品详情
+						</p>
+					</div>
+
+
+					<div class="tab-pane" id="panel-2">
+						<div class="container-fluid">
+							<div class="row-fluid">
+								<div class="span12">
+
+									<div class="row">
+
+										<div class="col-md-1"></div>
+										<div class="col-md-10">
+											<!-- <form class="form-horizontal" action="{:U('release')}" method="post" enctype="multipart/form-data"> -->
+											<input id="input-1" type="file" name="photo[]" multiple="true" class="file-loading"/>
+										</div>
+										<div class="col-md-1"></div>
+									</div>
+
+									<br/><br/>
+									<div class="row">
+										<div class="col-md-6"></div>
+										<div class="col-md-2">
+											<!-- <button type="submit" class="btn btn-default">继续发布</button> -->
+											<a href="{:U('release')}"  class="btn btn-default" role="button">继续发布</a>
+										</div>
+										<div class="col-md-4">
+											<!-- <button type="submit" class="btn btn-default">返回我的二手书页面</button> -->
+											<a href="{:U('User/mybooks')}"  class="btn btn-default" role="button">返回我的二手书页面</a>
+										</div>
+									</div>
+
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane" id="panel-3">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-md-3 control-label">联系人</label>
+							<div class="col-md-8">
+								<input type="text" name="product_name" class="form-control" id="inputEmail3" placeholder="name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-md-3 control-label">联系方式</label>
+							<div class="col-md-8">
+								<input type="text" name="product_name" class="form-control" id="inputEmail3" placeholder="name">
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+$('#input-1').fileinput({
+
+	overwriteInitial:true,
+	uploadUrl:"#",
+	uploadAsync:true,
+	maxFileCount:1,
+	maxFileCount:5,
+}
+
+);
+
+</script>
+</block>

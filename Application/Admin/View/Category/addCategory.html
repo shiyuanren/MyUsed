@@ -1,0 +1,43 @@
+
+
+<extend name="Public:newBase"/>
+
+<block name="content">
+	<div class="inner">
+		<div class="row">
+			<div class="col-lg-12">
+				<h2> 商品管理 </h2>
+			</div>
+		</div>
+
+		<hr />
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="box">
+					<header class="dark">
+						<div class="icons"><i class="icon-cloud-upload"></i></div>
+						<h5>商品列表</h5>
+					</header>
+					<div class="body">
+						<script src='__JS__/Admin/addcategory.js'></script>
+
+						<form role="form" id="add-form" action="{:U('Category/addCategory')}" method="post">
+							<div class="form-group"><br/>
+								<label for="categoryName">分类名称</label>
+								<input name="categoryName" type="text" class="form-control" id="categoryName" placeholder=""/>
+							</div>
+							<div class="form-group">
+								<label for="categoryDesp">分类描述</label>
+								<textarea name="categoryDesp"  class="form-control" id="categoryDesp" rows=10></textarea>
+							</div>
+							<input type="button" id='add-btn' class="btn btn-default" value="新增"/>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--END PAGE CONTENT -->
+
+</block>

@@ -1,0 +1,28 @@
+<extend name='Public:ubase'/>
+
+<block name="navigation">
+	<script>var $id={$goods_info.info.id}</script>
+	<script src='__JS__/goods.js'></script>
+
+	<div class="detail">
+		<ul>
+			<li>商品id: {$goods_info.info.id}</li>
+			<li>商品名称：{$goods_info.info.product_name}</li>
+			<li>商品价格：{$goods_info.info.price}</li>
+			<li>上架时间: {$goods_info.info.create_time|date="Y-m-d H:i:s",###}</li>
+			<li>更新时间：{$goods_info.info.update_time|date="Y-m-d H:i:s",###}</li>
+		<ul>	
+	</div>
+
+	<br/>
+	<div class="buy-btn">
+		<div class="select-num">
+			<input id='minus' type="button" value='-'>
+			<input id='num' type="text" disabled value='1'>
+			<input id='incr' type="button" value='+'>
+		</div><br/>
+		<div><input id="shopping-cart" name="shopping-cart" type="button" value="加入购物车"/></div>
+		<br/><a href="{:U('Cart/index')}">购物车</a>
+	</div>
+
+</block>
