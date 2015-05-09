@@ -1,6 +1,12 @@
+version 4.2.0
+=============
+**Date**: 05-May-2015
+
+1. (enh #275): Add Czech & Slovakian translations.
+
 version 4.1.9
 =============
-**Date**: 16-Apr-2015
+**Date**: 02-May-2015
 
 1. (enh #232): Update docs to reflect updated bootstrap CDN domain.
 2. (enh #237): Better styling of file caption icon.
@@ -18,6 +24,13 @@ version 4.1.9
 14. (bug #253): Fix initial preview delete cache initialization.
 15. (bug #257): Fix upload single to replace thumbs correctly.
 16. (enh #258): Enhance messages to include file plural and single.
+17. (enh #259): Add Polish translations.
+18. (enh #263): Enhance parsing of file preview thumbnails and actions.
+19. (enh #264): Validate input type of file before initializing plugin.
+20. (enh #269, #272): Add Turkish translations.
+21. (enh #270): Add Portugese translations.
+22. (enh #271): Add Dutch translations.
+23. (bug #273): Reset caption correctly after all initial preview is deleted.
 
 version 4.1.8
 =============

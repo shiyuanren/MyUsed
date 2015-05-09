@@ -122,8 +122,8 @@ class GoodsController extends Controller {
 
 
     public function uploadImgs(){   
-        if(IS_POST)  {
-                $this->uploadImages();
+        if(IS_POST)  { 
+                echo json_encode($this->uploadImages());
         }else{
              $this->display();
         }
@@ -131,8 +131,10 @@ class GoodsController extends Controller {
     }
 
     public function uploadImages(){
+        
+        $out=[];
 
-       $config = array(
+        $config = array(
             'maxSize'    =>    3145728,
             'rootPath'   =>    './Uploads/',
             'savePath'   =>    '',
@@ -140,27 +142,27 @@ class GoodsController extends Controller {
             'exts'       =>    array('jpg', 'gif', 'png', 'jpeg'),
             'autoSub'    =>    true,
             'subName'    =>    array('date','Ymd'),
-        );
-    
+            );
+
         $upload = new \Think\Upload($config);
         $info= $upload->upload();
 
         $data['product_id']=I("post.product_id");
-        dump($data['product_id']);
-       if(!$info){
-            $this->error($upload->getError());
+
+        if(!$info){
+            $out=['msg'=>$upload->getError()];
         }else{
             //$this->success('上传成功');
             $image = new \Think\Image(); 
             foreach($info as $file){
                 $data['image']=$file['savepath'].$file['savename'];
-
                 $image->open('./Uploads/'.$data['image']);
                 // 按照原图的比例生成一个最大为150*150的缩略图并保存为thumb.jpg
                 $image->thumb(539,300,\Think\Image::IMAGE_THUMB_FILLED)->save('./Uploads/'.$data['image']);
-
                 M('Image')->add($data);
-         }
+            }
         }
+
+        return $out;
     }
 }
