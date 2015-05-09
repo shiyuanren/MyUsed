@@ -1,0 +1,140 @@
+<?php if (!defined('THINK_PATH')) exit();?>
+<html>
+	<head>
+		<title>99m商城</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+		<link rel="stylesheet" href="/MyUsed/Public/Static/bootstrap/css/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="/MyUsed/Public/Css/user.css" />
+		<link rel="stylesheet" type="text/css" href="/MyUsed/Public/Css/user1.css">
+		<script src="/MyUsed/Public/Static/jquery-2.1.3.min.js"></script>
+		<script src="/MyUsed/Public/Static/bootstrap/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+
+	<div class="container-fluid head">
+		<div class="row">
+		  	
+	<div class="head-box">	
+		<div class="logo"><img src="/MyUsed/Public/Img/logo.png"/></div>
+		<div class="phone">网购热线：<span>4007-222-222</span></div>
+</div>
+
+		</div>
+	</div>
+
+	<div class="container-fluid  middle">
+		<div class="row">
+			<div class="pull-left col-md-2 left">
+				
+				
+				
+			</div>
+
+			<div class="pull-left col-md-8 left">
+				
+	<div class="login_wrap ">
+	<div class="login_wrapL"></div>
+	<div class="login_wrapR">
+	<div class="titler" align="center"><b>新用户注册</b></div><br/><br/><br/><br/>
+<div id='notice'>
+
+<!--
+	<form  id='register_form' action="<?php echo U('Home/User/register');?>"  method="post">
+		<div style="float:right"><span>用户名<input type='text' id="username" name='username'/><span></div><br/><b></b>
+		<div style="float:right"><span>密码<input  type='password' id="pwd" name='pwd'/><span></div><br/>
+		<div style="float:right"><span>确认密码<input type='password' id="repwd" name='repwd' /><span></div><br/>
+		<p>
+			<div><img width="30%" height="40" alt="验证码" src="<?php echo U('Home/User/verify_c');?>" title="点击刷新"/>
+			<input type='text' style="float:right" id="verify" name='verify' height="40" width="50%" palceholder="验证码"/>	</div>
+		</p>
+		<input id='btn' type='button' value="注册"/>
+	</form>
+
+	
+-->	
+	<form role="form" id='register_form' action="<?php echo U('Home/User/register');?>" method="post">
+		<div class="form-group">
+			<label for="exampleInputEmail1">用户名</label>
+			<input name="username" type="text" class="form-control" id="username" placeholder=""/>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">密码</label>
+			<input name="pwd" type="password" class="form-control" id="pwd" placeholder="Password">
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">确认密码</label>
+			<input name="repwd" type="password" class="form-control" id="repwd" placeholder="Password">
+		</div><br/>
+		<!--<button id="btn" type="submit" class="btn btn-default">注册</button>-->
+		<input id='btn' type='button' class="btn btn-default" value="注册"/>
+		&nbsp;&nbsp;&nbsp;<a class="registerbtn" href="<?php echo U('Home/User/login');?>">登录</a>
+	</form>
+	
+	
+
+
+	</div>
+	</div>
+</div>
+
+			</div>
+
+			<div class="pull-left col-md-2 left">
+				
+				
+				
+			</div>
+
+		</div>
+	</div>
+
+
+		
+	<div class="container-fluid foot">
+	  <div class="row">
+	  	
+	<div class="footwrap" align="center">
+	<div><p>Copyright 2012-2014 www.99mi.com All Rights Reserved 京ICP备13035787号</p></div>
+	<div class="foot-img" align="center">
+		<img src="/MyUsed/Public/Img/zj_01.jpg"/>
+		<img src="/MyUsed/Public/Img/zj_02.jpg"/>
+		<img src="/MyUsed/Public/Img/zj_03.jpg"/>
+		<img src="/MyUsed/Public/Img/zj_04.jpg"/>
+		<img src="/MyUsed/Public/Img/zj_05.jpg"/>
+	</div>
+</div>
+
+
+	  </div>
+	</div>
+
+
+<script>
+$(function(){
+	
+	$('#btn').click(function(){
+		var $uname = $('#username').val();
+		var $pwd = $('#pwd').val();
+		var $pwd2 = $('#repwd').val();
+		//console.log($uname);
+		//$.post("<?php echo U('Home/User/register');?>");
+		$action = $('#register_form').attr('action');
+
+		//alert($action);
+		
+		$.post($action,{username:$uname,pwd:$pwd,repwd:$pwd2},function(data){
+			//console.log(data);
+			//$('#notice').html(data.msg);
+			if(typeof(data.msg)!='undefined'){alert(data.msg);}
+			window.location.href=data.url;
+			
+		});
+		//console.log($uname);
+	})
+	
+})
+</script>
+
+	</body>
+</html>

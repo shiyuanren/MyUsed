@@ -5,126 +5,93 @@
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
-		<title>Worthy | 二手书商城</title>
+		<title>Secondhand Store</title>
 		<meta name="description" content="Worthy a Bootstrap-based, Responsive HTML5 Template">
 		<meta name="author" content="htmlcoder.me">
 
-		<!-- Mobile Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="/used/Public/Static/worthy/images/favicon.ico">
-
-		<!-- Web Fonts -->
+		<!-- <link rel="shortcut icon" href="/MyUsed/Public/Static/worthy/images/favicon.ico"> -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+		<link href="/MyUsed/Public/Static/worthy/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="/MyUsed/Public/Static/worthy/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="/MyUsed/Public/Static/worthy/css/animations.css" rel="stylesheet">
+		<link href="/MyUsed/Public/Static/worthy/css/style.css" rel="stylesheet">
+		<!-- <link href="/MyUsed/Public/Static/worthy/css/style1.css" rel="stylesheet"> -->
+		<link href="/MyUsed/Public/Static/worthy/css/custom.css" rel="stylesheet">
 
-		<!-- Bootstrap core CSS -->
-		<link href="/used/Public/Static/worthy/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-		<!-- Font Awesome CSS -->
-		<link href="/used/Public/Static/worthy/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-		<!-- Plugins -->
-		<link href="/used/Public/Static/worthy/css/animations.css" rel="stylesheet">
-
-		<!-- Worthy core CSS file -->
-		<link href="/used/Public/Static/worthy/css/style.css" rel="stylesheet">
-
-		<!-- Custom css --> 
-		<link href="/used/Public/Static/worthy/css/custom.css" rel="stylesheet">
 	</head>
 
 	<body class="no-trans">
 		<!-- scrollToTop -->
 		<!-- ================ -->
 		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+<div class="topbar animated fadeInLeftBig"></div>
 
-		<!-- header start -->
-		<!-- ================ --> 
-		<header class="header fixed clearfix navbar navbar-fixed-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
+<!-- Header Starts -->
+<div class="navbar-wrapper">
+      <div class="container">
 
-						<!-- header-left start -->
-						<!-- ================ -->
-						<div class="header-left clearfix">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-nav">
+          <div class="container">
+            <div class="navbar-header" style="height:80px">
+              <!-- Logo Starts -->
+              <a class="navbar-brand" href="<?php echo U('Home/Index/index');?>"><img src="/MyUsed/Public/Img/logo.png" alt="logo"></a>
+              <!-- #Logo Ends -->
 
-							<!-- logo -->
-							<div class="logo smooth-scroll">
-								<a href="#banner"><img id="logo" src="/used/Public/Static/worthy/images/logo.png" alt="Worthy"></a>
-							</div>
 
-							<!-- name-and-slogan -->
-							<div class="site-name-and-slogan smooth-scroll">
-								<div class="site-name"><a href="#banner">二手书</a></div>
-								<div class="site-slogan">Free Bootstrap Theme by <a target="_blank" href="http://htmlcoder.me">HtmlCoder</a></div>
-							</div>
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
 
-						</div>
-						<!-- header-left end -->
+            </div>
 
-					</div>
-					<div class="col-md-8">
+           <!--  <ul class="nav nav-pills">
+            	<li role="presentation" class="active"><a href="#">Home</a></li>
+            	<li role="presentation"><a href="#">Profile</a></li>
+            	<li role="presentation"><a href="#">Messages</a></li>
+            </ul> -->
 
-						<!-- header-right start -->
-						<!-- ================ -->
-						<div class="header-right clearfix">
 
-							<!-- main-navigation start -->
-							<!-- ================ -->
-							<div class="main-navigation animated">
+            <!-- Nav Starts -->
+             <div class="navbar-collapse  collapse filters">
+             </br>
+              <ul class="nav nav-pills navbar-right">
+                 <li role="presentation" class="active"><a href="<?php echo U('Home/Index/index');?>">Home</a></li>
+                 <li role="presentation"><a href="<?php echo U('Home/User/login');?>">Sign In</a></li>
+                 <li role="presentation"><a href="<?php echo U('Home/User/mybooks');?>">My Books</a></li>
+                 <li role="presentation"><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
 
-								<!-- navbar start -->
-								<!-- ================ -->
-								<nav class="navbar navbar-default" role="navigation">
-									<div class="container-fluid">
+            <!-- <div class="filters text-center">
+							<ul class="nav nav-pills">
+								<li class="active"><a href="#" data-filter="*">All</a></li>
+								<li><a href="#" data-filter=".web-design">Web design</a></li>
+								<li><a href="#" data-filter=".app-development">App development</a></li>
+								<li><a href="#" data-filter=".site-building">Site building</a></li>
+							</ul>
+						</div> -->
+            <!-- #Nav Ends -->
 
-										<!-- Toggle get grouped for better mobile display -->
-										<div class="navbar-header">
-											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-												<span class="sr-only">Toggle navigation</span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-											</button>
-										</div>
+          </div>
+        </div>
 
-										<!-- Collect the nav links, forms, and other content for toggling -->
-										<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
-											<ul class="nav navbar-nav navbar-right">
-												<li class="active"><a href="<?php echo U('Home/Index/index');?>">首页</a></li>
-												<li><a href="<?php echo U('Home/User/login');?>">登录</a></li>
-												
-												<li><a href="<?php echo U('Home/User/mybooks');?>">我的二手书</a></li>
-												
-												<li><a href="#clients">关于</a></li>
-												<!--<li><a href="#portfolio">Portfolio</a></li>
-													<li><a href="#portfolio">登录</a></li>
-												<li><a href="#contact">Contact</a></li>-->
-											</ul>
-										</div>
+      </div>
+    </div>
+</br></br>
+<!-- #Header Starts -->
 
-									</div>
-								</nav>
-								<!-- navbar end -->
 
-							</div>
-							<!-- main-navigation end -->
-
-						</div>
-						<!-- header-right end -->
-
-					</div>
-				</div>
-			</div>
-		</header>
 		
 		
 
-	<script src="/used/Public/Js/image.js"></script>
-	
+	<script src="/MyUsed/Public/Js/image.js"></script>
+	 <script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/jquery.min.js"></script>
 		<!-- banner start -->
 		<!-- ================ -->
 		<!-- <div id="banner" class="banner">
@@ -176,7 +143,7 @@
 								<div class="image-box">
 									<div class="overlay-container">
 										
-											<img class="img-thumbnail" src="/used/Uploads/<?php echo ($gl["photo"]); ?>" onload="AutoResizeImage(262.5,175,this)" alt="">
+											<img class="img-thumbnail" src="/MyUsed/Uploads/<?php echo ($gl["photo"]); ?>" onload="AutoResizeImage(262.5,175,this)" alt="">
 								
 										<a class="overlay" data-toggle="modal" data-target="#<?php echo ($gl["id"]); ?>">
 											<i class="fa fa-search-plus"></i>
@@ -201,14 +168,19 @@
 													<div class="col-md-6">
 														<div class="detail">
 															<ul>
-																<li>商品id: <?php echo ($gl["id"]); ?></li>
-																<li>商品名称：<?php echo ($gl["product_name"]); ?></li>
-																<li>商品价格：<?php echo ($gl["price"]); ?></li>
-																<li>上架时间: <?php echo (date("Y-m-d H:i:s",$gl["info"]["create_time"])); ?></li>
-																<li>更新时间：<?php echo (date("Y-m-d H:i:s",$gl["update_time"])); ?></li>
-																<ul>	
+																
+																<li>商品：<?php echo ($gl["product_name"]); ?></li>
+																<li>估价：￥<?php echo ($gl["price"]); ?></li>
+																<li>数量：<?php echo ($gl["quantity"]); ?></li>
+																<li>描述：<?php echo ($gl["description"]); ?></li>
+																<li>联系人：<?php echo ($gl["seller"]); ?></li>
+																<li>手机号：<?php echo ($gl["sellerphone"]); ?></li>
+																<li>微信：<?php echo ($gl["wechat"]); ?></li>
+																<li>上架时间: <?php echo (date("Y-m-d H:i:s",$gl["create_time"])); ?></li>
+																
+																</ul>	
 																</div>
-															</div>
+														</div>
 															<div class="col-md-6">
 																
 
@@ -218,14 +190,14 @@
 																	<ol class="carousel-indicators">
 																		<li data-target="#<?php echo ($gl["product_name"]); ?>" data-slide-to="0" class="active"></li>
 
-																		<?php $__FOR_START_19605__=0;$__FOR_END_19605__=$gl["images_count"];for($i=$__FOR_START_19605__;$i < $__FOR_END_19605__;$i+=1){ ?><li data-target="#<?php echo ($gl["product_name"]); ?>" data-slide-to="<?php echo ($i+1); ?>"></li><?php } ?>
+																		<?php $__FOR_START_18876__=0;$__FOR_END_18876__=$gl["images_count"];for($i=$__FOR_START_18876__;$i < $__FOR_END_18876__;$i+=1){ ?><li data-target="#<?php echo ($gl["product_name"]); ?>" data-slide-to="<?php echo ($i+1); ?>"></li><?php } ?>
 																	</ol>
 																	<!-- Carousel items-->
 																	<div class="carousel-inner">
 
-																		<div class="active item"><img class="img-rounded" src="/used/Uploads/<?php echo ($gl["avater"]); ?>"  onload="AutoResizeImage(539,300,this)" alt="">
+																		<div class="active item"><img class="img-rounded" src="/MyUsed/Uploads/<?php echo ($gl["avater"]); ?>"  onload="AutoResizeImage(539,300,this)" alt="">
 																		</div>
-																		<?php if(is_array($gl['images'])): foreach($gl['images'] as $key=>$image): ?><div class="item"><img class="img-rounded" src="/used/Uploads/<?php echo ($image); ?>" onload="AutoResizeImage(539,300,this)" alt=""></div><?php endforeach; endif; ?>
+																		<?php if(is_array($gl['images'])): foreach($gl['images'] as $key=>$image): ?><div class="item"><img class="img-rounded" src="/MyUsed/Uploads/<?php echo ($image); ?>" onload="AutoResizeImage(539,300,this)" alt=""></div><?php endforeach; endif; ?>
 																		
 																	</div>
 
@@ -285,26 +257,30 @@
 		<!-- JavaScript files placed at the end of the document so the pages load faster
 		================================================== -->
 		<!-- Jquery and Bootstap core js files -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/plugins/jquery.min.js"></script>
-		<script type="text/javascript" src="/used/Public/Static/worthy/bootstrap/js/bootstrap.min.js"></script>
+
+		
+		<!-- // <script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/jquery.min.js"></script> -->
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- Modernizr javascript -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/plugins/modernizr.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/modernizr.js"></script>
 
 		<!-- Isotope javascript -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/plugins/isotope/isotope.pkgd.min.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/isotope/isotope.pkgd.min.js"></script>
 		
 		<!-- Backstretch javascript -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/plugins/jquery.backstretch.min.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/jquery.backstretch.min.js"></script>
 
 		<!-- Appear javascript -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/plugins/jquery.appear.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/jquery.appear.js"></script>
 
 		<!-- Initialization of Plugins -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/js/template.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/js/template.js"></script>
 
 		<!-- Custom Scripts -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/js/custom.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/js/custom.js"></script>
+
+
 
 
 		

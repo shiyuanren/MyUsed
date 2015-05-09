@@ -13,125 +13,119 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="/used/Public/Static/worthy/images/favicon.ico">
+		<link rel="shortcut icon" href="/MyUsed/Public/Static/worthy/images/favicon.ico">
 
 		<!-- Web Fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
 
 		<!-- Bootstrap core CSS -->
-		<link href="/used/Public/Static/worthy/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="/MyUsed/Public/Static/worthy/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 		<!-- Font Awesome CSS -->
-		<link href="/used/Public/Static/worthy/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="/MyUsed/Public/Static/worthy/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
 
 		<!-- Plugins -->
-		<link href="/used/Public/Static/worthy/css/animations.css" rel="stylesheet">
+		<link href="/MyUsed/Public/Static/worthy/css/animations.css" rel="stylesheet">
 
 		<!-- Worthy core CSS file -->
-		<link href="/used/Public/Static/worthy/css/style.css" rel="stylesheet">
+		<link href="/MyUsed/Public/Static/worthy/css/style.css" rel="stylesheet">
 
 		<!-- Custom css --> 
-		<link href="/used/Public/Static/worthy/css/custom.css" rel="stylesheet">
+		<link href="/MyUsed/Public/Static/worthy/css/custom.css" rel="stylesheet">
 	</head>
 
 	<body class="no-trans">
 		<!-- scrollToTop -->
 		<!-- ================ -->
 		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+<div class="topbar animated fadeInLeftBig"></div>
 
-		<!-- header start -->
-		<!-- ================ --> 
-		<header class="header fixed clearfix navbar navbar-fixed-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
+<!-- Header Starts -->
+<div class="navbar-wrapper">
+      <div class="container">
 
-						<!-- header-left start -->
-						<!-- ================ -->
-						<div class="header-left clearfix">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-nav">
+          <div class="container">
+            <div class="navbar-header">
+              <!-- Logo Starts -->
+              <a class="navbar-brand" href="#home"><img src="/MyUsed/Public/Img/logo.png" alt="logo"></a>
+              <!-- #Logo Ends -->
 
-							<!-- logo -->
-							<div class="logo smooth-scroll">
-								<a href="#banner"><img id="logo" src="/used/Public/Static/worthy/images/logo.png" alt="Worthy"></a>
-							</div>
 
-							<!-- name-and-slogan -->
-							<div class="site-name-and-slogan smooth-scroll">
-								<div class="site-name"><a href="#banner">二手书</a></div>
-								<div class="site-slogan">Free Bootstrap Theme by <a target="_blank" href="http://htmlcoder.me">HtmlCoder</a></div>
-							</div>
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
 
-						</div>
-						<!-- header-left end -->
+            </div>
 
-					</div>
-					<div class="col-md-8">
 
-						<!-- header-right start -->
-						<!-- ================ -->
-						<div class="header-right clearfix">
+            <!-- Nav Starts -->
+             <div class="navbar-collapse  collapse">
+              <ul class="nav navbar-nav navbar-right scroll">
+                 <li class="active"><a href="<?php echo U('Home/Index/index');?>">Home</a></li>
+                 <li ><a href="<?php echo U('Home/User/login');?>">Sign In</a></li>
+                 <li ><a href="<?php echo U('Home/User/mybooks');?>">My Books</a></li>
+                 <li ><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+            <!-- #Nav Ends -->
 
-							<!-- main-navigation start -->
-							<!-- ================ -->
-							<div class="main-navigation animated">
+          </div>
+        </div>
 
-								<!-- navbar start -->
-								<!-- ================ -->
-								<nav class="navbar navbar-default" role="navigation">
-									<div class="container-fluid">
+      </div>
+    </div>
+<!-- #Header Starts -->
 
-										<!-- Toggle get grouped for better mobile display -->
-										<div class="navbar-header">
-											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-												<span class="sr-only">Toggle navigation</span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-											</button>
-										</div>
 
-										<!-- Collect the nav links, forms, and other content for toggling -->
-										<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
-											<ul class="nav navbar-nav navbar-right">
-												<li class="active"><a href="<?php echo U('Home/Index/index');?>">首页</a></li>
-												<li><a href="<?php echo U('Home/User/login');?>">登录</a></li>
-												
-												<li><a href="<?php echo U('Home/User/mybooks');?>">我的二手书</a></li>
-												
-												<li><a href="#clients">关于</a></li>
-												<!--<li><a href="#portfolio">Portfolio</a></li>
-													<li><a href="#portfolio">登录</a></li>
-												<li><a href="#contact">Contact</a></li>-->
-											</ul>
-										</div>
-
-									</div>
-								</nav>
-								<!-- navbar end -->
-
-							</div>
-							<!-- main-navigation end -->
-
-						</div>
-						<!-- header-right end -->
-
-					</div>
-				</div>
-			</div>
-		</header>
 		
 		
 
-	<script src="/used/Public/Static/jquery-2.1.3.min.js"></script>
 	
-	<link href="/used/Public/Static/fileinput/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
-	<script src="/used/Public/Static/jquery-2.1.3.min.js"></script>
-	<script src="/used/Public/Js/release.js"></script>
- <link rel="stylesheet" type="text/css" href="/used/Public/Css/release.css">
+	<link href="/MyUsed/Public/Static/fileinput/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
 
-	<script src="/used/Public/Static/fileinput/js/fileinput.min.js"></script>
-	<script src="/used/Public/Static/fileinput/js/fileinput_locale_zh.js"></script>
+	
+
+	 <script src="/MyUsed/Public/Static/jquery-2.1.3.min.js"></script>
+	<script src="/MyUsed/Public/Js/release.js"></script>
+ <link rel="stylesheet" type="text/css" href="/MyUsed/Public/Css/release.css">
+
+	
+
+
+	<script type="text/javascript" src="/MyUsed/Public/Static/jquery-2.1.3.min.js"></script>
+<script src="/MyUsed/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/MyUsed/uploadify/uploadify.css">
+
+<script src="/MyUsed/Public/Static/fileinput/js/fileinput.min.js"></script>
+	<script src="/MyUsed/Public/Static/fileinput/js/fileinput_locale_zh.js"></script>
+
+<script src="/MyUsed/Public/Js/image.js"></script>
+
+
+<script type="text/javascript">
+		<?php $timestamp = time();?>
+		$(function() {
+			$('#file_upload').uploadify({
+				/*'formData'     : {
+					'timestamp' : '<?php echo $timestamp;?>',
+					'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
+				},*/
+				'swf'      : '/MyUsed/uploadify/uploadify.swf',
+				'uploader' : 'uploadOne',
+				'buttonText' : '缩略图上传',
+				'onUploadSuccess' : function(file, data, response) {
+					//alert(data);
+            $('#img').attr('src','/MyUsed/Uploads/'+ data);
+            $('#photo').val(data);
+        }
+			});
+		});
+	</script>
 
 <!-- 	<div id="banner" class="banner">
 			<div class="banner-image"></div>
@@ -170,28 +164,35 @@
 					<div class="tab-pane active" id="panel-1">
 
 					</br></br></br>
-						<form id="form-1" enctype="multipart/form-data" class="form-horizontal" action="<?php echo U('release');?>" method="post">
+						<!-- <form id="form-1" enctype="multipart/form-data" class="form-horizontal" action="<?php echo U('release');?>" method="post"> -->
 
 							<div class="row">
 								<div class="col-md-1"></div>
 								<div class="col-md-3">
 										</br></br></br></br>
-										<div class="form-group">
-										<label for="inputEmail3" class="col-md-2 control-label"></br></br>小图</label>
-										<!-- <div class="col-md-1"></div> -->
-										<div class="col-md-4">
-											<div id="uploadPreview"></br></br></div>
+										<!-- <div class="form-group">
+											<label for="inputEmail3" class="col-md-2 control-label"></br></br>小图</label>
+											<div class="col-md-4">
+												<div id="uploadPreview"></br></br></div>
+												<input type="file" id="uploadImage" name="photoimage" class="fimg1" />
+											</div>
+										</div> -->
 
-											<input type="file" id="uploadImage" name="photoimage" class="fimg1" />
-											 <!-- onchange="PreviewImage();" -->
-										</div>
+										<form>
+											<div style="height:130xp;width:130px;border:1px solid #ddd">
+												<img id="img" src="http://www.thinkphp.cn/Public/new/img/header_logo.png" width="130" height="130"  class="img-thumbnail" border="0" />
+											</div>
+												<input id="file_upload" name="file_upload" type="file" multiple="false" value="" />
+										</form>
 
-									</div>
 								</div>
+								
 
 
 								<div class="col-md-6">
 
+<form id="form-1" enctype="multipart/form-data" class="form-horizontal" action="<?php echo U('release');?>" method="post">
+									<input type="hidden" name="photo" id="photo">
 
 									<div class="form-group">
 										<label for="inputEmail3" class="col-md-2 control-label">商品名称</label>
@@ -246,11 +247,11 @@
 									</div>
 								</div>
 
-
+</form>
 
 
 							</div>
-						</form>
+						<!-- </form> -->
 					</div>
 
 					<div class="tab-pane" id="panel-2">
@@ -273,7 +274,7 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-md-3 control-label">其他联系方式</label>
 							<div class="col-md-4">
-								<input type="text" name="sellerphone" class="form-control" id="inputEmail3" placeholder="wechat or QQ">
+								<input type="text" name="wechat" class="form-control" id="inputEmail3" placeholder="wechat">
 							</div>
 						</div>
 
@@ -302,6 +303,7 @@
 										<div class="col-md-1"></div>
 										<div class="col-md-10">
 											<!-- <form class="form-horizontal" action="<?php echo U('release');?>" method="post" enctype="multipart/form-data"> -->
+											<input type="hidden" name="product_id" id="product_id">
 											<input id="input-1" type="file" name="photo[]" multiple="true" class="file-loading"/>
 										</div>
 										<div class="col-md-1"></div>
@@ -323,60 +325,12 @@
 							</div>
 						</div>
 					</div>
-
-					
-
-
 				</div>
 			<!-- </form> -->
 			</div>
 		</div>
 	</div>
 </div>
-
-<script>
-$('#input-1').fileinput({
-
-	overwriteInitial:true,
-	uploadUrl:"#",
-	uploadAsync:true,
-	maxFileCount:1,
-	maxFileCount:5,
-}
-
-);
-
-</script>
-
-
-<script>
-	$("#uploadImage").on("change", function(){
-    // Get a reference to the fileList
-    var files = !!this.files ? this.files : [];
-  
-    // If no files were selected, or no FileReader support, return
-    if (!files.length || !window.FileReader) return;
-  
-    // Only proceed if the selected file is an image
-    if (/^image/.test( files[0].type)){
-  
-        // Create a new instance of the FileReader
-        var reader = new FileReader();
-  
-        // Read the local file as a DataURL
-        reader.readAsDataURL(files[0]);
-  
-        // When loaded, set image data as background of div
-        reader.onloadend = function(){
-   
-       $("#uploadPreview").css("background-image", "url("+this.result+")");
-         
-        }
-  
-    }
-  
-});
-</script>
 
 		
 	<footer>
@@ -397,26 +351,30 @@ $('#input-1').fileinput({
 		<!-- JavaScript files placed at the end of the document so the pages load faster
 		================================================== -->
 		<!-- Jquery and Bootstap core js files -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/plugins/jquery.min.js"></script>
-		<script type="text/javascript" src="/used/Public/Static/worthy/bootstrap/js/bootstrap.min.js"></script>
+
+		
+		<!-- // <script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/jquery.min.js"></script> -->
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- Modernizr javascript -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/plugins/modernizr.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/modernizr.js"></script>
 
 		<!-- Isotope javascript -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/plugins/isotope/isotope.pkgd.min.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/isotope/isotope.pkgd.min.js"></script>
 		
 		<!-- Backstretch javascript -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/plugins/jquery.backstretch.min.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/jquery.backstretch.min.js"></script>
 
 		<!-- Appear javascript -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/plugins/jquery.appear.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/jquery.appear.js"></script>
 
 		<!-- Initialization of Plugins -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/js/template.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/js/template.js"></script>
 
 		<!-- Custom Scripts -->
-		<script type="text/javascript" src="/used/Public/Static/worthy/js/custom.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/js/custom.js"></script>
+
+
 
 
 		

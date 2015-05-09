@@ -95,7 +95,8 @@ class GoodsController extends Controller {
 
             $data['product_name']=I('product_name',0,'');
             $data['description']=I('description');
-            $data['price']=I('price',0,'float');
+            $data['price']=number_format(I('price',0,'float'),2);
+           
             $data['quantity']=I('quantity',0,'int');
             $data['category_id']=I('select',0,'int');
             $data['uid']=session('user_id');     //可以根据uid设置卖家联系方式

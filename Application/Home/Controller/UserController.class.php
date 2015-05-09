@@ -26,7 +26,7 @@ class UserController extends Controller {
 
 
             $data['uname']=$data['username'];
-            $data['upwd']=$data['upwd'];
+            $data['upwd']=$data['password'];
 
             $user=D('User'); 
             $msg=$user->login($data);
@@ -40,17 +40,16 @@ class UserController extends Controller {
     public function register(){
     	if(IS_POST){   //是否提交数据
     		$data=I('post.');
-            /*$verify = I('param.verify','');
-            if(!$this->check_verify($verify)){
-                $info=array(
-                    'status'=>0,
-                    'msg'=>"验证码错误",
-                );
-                $this->ajaxReturn($info);
-            }*/
-    		//$this->show(D('User')->register($data));
     		$user=D('User');
-    		$this->ajaxReturn($user->register());
+
+    		$msg = $user->register();
+
+            if($msg['status']==0){
+                $this->error($msg['msg']);
+
+            }else{
+                $this->redirect('mybooks');
+            }
     	}else{
     		$this->display();
     	}

@@ -5,121 +5,88 @@
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
-		<title>Worthy | 二手书商城</title>
+		<title>Secondhand Store</title>
 		<meta name="description" content="Worthy a Bootstrap-based, Responsive HTML5 Template">
 		<meta name="author" content="htmlcoder.me">
 
-		<!-- Mobile Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="__WORTHY__/images/favicon.ico">
-
-		<!-- Web Fonts -->
+		<!-- <link rel="shortcut icon" href="__WORTHY__/images/favicon.ico"> -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
-
-		<!-- Bootstrap core CSS -->
 		<link href="__WORTHY__/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-		<!-- Font Awesome CSS -->
 		<link href="__WORTHY__/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-		<!-- Plugins -->
 		<link href="__WORTHY__/css/animations.css" rel="stylesheet">
-
-		<!-- Worthy core CSS file -->
 		<link href="__WORTHY__/css/style.css" rel="stylesheet">
-
-		<!-- Custom css --> 
+		<!-- <link href="__WORTHY__/css/style1.css" rel="stylesheet"> -->
 		<link href="__WORTHY__/css/custom.css" rel="stylesheet">
+
 	</head>
 
 	<body class="no-trans">
 		<!-- scrollToTop -->
 		<!-- ================ -->
 		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+<div class="topbar animated fadeInLeftBig"></div>
 
-		<!-- header start -->
-		<!-- ================ --> 
-		<header class="header fixed clearfix navbar navbar-fixed-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
+<!-- Header Starts -->
+<div class="navbar-wrapper">
+      <div class="container">
 
-						<!-- header-left start -->
-						<!-- ================ -->
-						<div class="header-left clearfix">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-nav">
+          <div class="container">
+            <div class="navbar-header" style="height:80px">
+              <!-- Logo Starts -->
+              <a class="navbar-brand" href="{:U('Home/Index/index')}"><img src="__IMG__/logo.png" alt="logo"></a>
+              <!-- #Logo Ends -->
 
-							<!-- logo -->
-							<div class="logo smooth-scroll">
-								<a href="#banner"><img id="logo" src="__WORTHY__/images/logo.png" alt="Worthy"></a>
-							</div>
 
-							<!-- name-and-slogan -->
-							<div class="site-name-and-slogan smooth-scroll">
-								<div class="site-name"><a href="#banner">二手书</a></div>
-								<div class="site-slogan">Free Bootstrap Theme by <a target="_blank" href="http://htmlcoder.me">HtmlCoder</a></div>
-							</div>
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
 
-						</div>
-						<!-- header-left end -->
+            </div>
 
-					</div>
-					<div class="col-md-8">
+           <!--  <ul class="nav nav-pills">
+            	<li role="presentation" class="active"><a href="#">Home</a></li>
+            	<li role="presentation"><a href="#">Profile</a></li>
+            	<li role="presentation"><a href="#">Messages</a></li>
+            </ul> -->
 
-						<!-- header-right start -->
-						<!-- ================ -->
-						<div class="header-right clearfix">
 
-							<!-- main-navigation start -->
-							<!-- ================ -->
-							<div class="main-navigation animated">
+            <!-- Nav Starts -->
+             <div class="navbar-collapse  collapse">
+             </br>
+              <ul class="nav nav-pills navbar-right">
+                 <li role="presentation" class="active"><a href="{:U('Home/Index/index')}">Home</a></li>
+                 <li role="presentation"><a href="{:U('Home/User/login')}">Sign In</a></li>
+                 <li role="presentation"><a href="{:U('Home/User/mybooks')}">My Books</a></li>
+                 <li role="presentation"><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
 
-								<!-- navbar start -->
-								<!-- ================ -->
-								<nav class="navbar navbar-default" role="navigation">
-									<div class="container-fluid">
+            <!-- <div class="filters text-center">
+							<ul class="nav nav-pills">
+								<li class="active"><a href="#" data-filter="*">All</a></li>
+								<li><a href="#" data-filter=".web-design">Web design</a></li>
+								<li><a href="#" data-filter=".app-development">App development</a></li>
+								<li><a href="#" data-filter=".site-building">Site building</a></li>
+							</ul>
+						</div> -->
+            <!-- #Nav Ends -->
 
-										<!-- Toggle get grouped for better mobile display -->
-										<div class="navbar-header">
-											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-												<span class="sr-only">Toggle navigation</span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-											</button>
-										</div>
+          </div>
+        </div>
 
-										<!-- Collect the nav links, forms, and other content for toggling -->
-										<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
-											<ul class="nav navbar-nav navbar-right">
-												<li class="active"><a href="{:U('Home/Index/index')}">首页</a></li>
-												<li><a href="{:U('Home/User/login')}">登录</a></li>
-												
-												<li><a href="{:U('Home/User/mybooks')}">我的二手书</a></li>
-												
-												<li><a href="#clients">关于</a></li>
-												<!--<li><a href="#portfolio">Portfolio</a></li>
-													<li><a href="#portfolio">登录</a></li>
-												<li><a href="#contact">Contact</a></li>-->
-											</ul>
-										</div>
+      </div>
+    </div>
+</br></br>
+<!-- #Header Starts -->
 
-									</div>
-								</nav>
-								<!-- navbar end -->
 
-							</div>
-							<!-- main-navigation end -->
-
-						</div>
-						<!-- header-right end -->
-
-					</div>
-				</div>
-			</div>
-		</header>
 		
 		<block name="middle">	
 			内容区

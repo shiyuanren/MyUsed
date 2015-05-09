@@ -12,6 +12,7 @@ class UserModel extends Model {
 	protected $_validate = array(
       	array('uname','/^[\d\w_-]{4,20}$/','用户名不合法！'), //数据字段为create的参数字段名称（多数情况下为数据表字段名,映射后的字段名）
       	array('uname','','用户名已被注册！',0,'unique'),
+      	array('email','','用户名已被注册！',0,'unique'),
       	array('upwd','/^[\d\w]{4,10}$/','密码必须是4-10位，且只能为英文或数字！'), // 在新增的时候验证name字段是否唯一
       	array('repwd','upwd','确认密码不正确',0,'confirm'), // 验证确认密码是否和密码一致,
       	//array('password','checkPwd','密码格式不正确',0,'function'), // 自定义函数验证密码格式
@@ -28,7 +29,7 @@ class UserModel extends Model {
 		$info=array(
 					'status'=>1,
 					'msg'=>"注册成功",
-					'url'=>U('/Home/Index/index'),
+					'url'=>U('mybooks'),
 			);
 
 		if (!$this->create()){

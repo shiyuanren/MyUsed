@@ -1,65 +1,151 @@
-<extend name="Public:base"/>
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> 
+<html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>Login and Registration</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
 
-<block name="header">
-	<div class="head-box">	
-		<div class="logo"><img src="__PUBLIC__/Img/logo.png"/></div>
-		<div class="phone">网购热线：<span>4007-222-222</span></div>
-</div>
-</block>
-
-<block name="navigation">
-	<div class="login_wrap ">
-	<div class="login_wrapL"></div>
-	<div class="login_wrapR">
-	<div class="titler" align="center"><b>用户登录</b></div><br/><br/><br/><br/>
-<div id='notice'>
-	
-	<form role="form" id='register_form' action="{:U('Home/User/login')}" method="post">
-		<div class="form-group">
-			<label for="exampleInputEmail1">用户名</label>
-			<input name="username" type="text" class="form-control" id="username" placeholder="" value="{$user.uname}">
-		</div>
-		<div class="form-group">
-			<label for="exampleInputPassword1">密码</label>
-			<input name="upwd" type="password" class="form-control" id="pwd" placeholder="Password">
-		</div><br/><br/>
-		<input id='btn' type="button" class="btn btn-default" value="登录"/>&nbsp;&nbsp;&nbsp;<a class="registerbtn" href="{:U('Home/User/register')}">免费注册</a>
-
-	</form>
+        <link rel="stylesheet" href="__STATIC__/bootstrap/css/bootstrap.css">
+        <script src="__STATIC__/jquery-2.1.3.min.js"></script>
+        <script src="__STATIC__/bootstrap/js/bootstrap.min.js"></script>
 
 
-	</div>
-	</div>
-</div>
-</block>
+        <link rel="stylesheet" type="text/css" href="__STATIC__/login/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="__STATIC__/login/css/style2.css" />
+		<link rel="stylesheet" type="text/css" href="__STATIC__/login/css/animate-custom.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Codrops top bar -->
+           <!--  <div class="codrops-top">
+                <a href="">
+                    <strong>&laquo; Previous Demo: </strong>Responsive Content Navigator
+                </a>
+                <span class="right">
+                    <a href=" http://tympanus.net/codrops/2012/03/27/login-and-registration-form-with-html5-and-css3/">
+                        <strong>Back to the Codrops Article</strong>
+                    </a>
+                </span>
+                <div class="clr"></div>
+            </div> --><!--/ Codrops top bar -->
+            <header>
+              <!--   <h1>Login and Registration Form <span>with HTML5 and CSS3</span></h1>
+				<nav class="codrops-demos">
+					<span>Click <strong>"Join us"</strong> to see the form switch</span>
+					<a href="index.html">Demo 1</a>
+					<a href="index2.html" class="current-demo">Demo 2</a>
+					<a href="index3.html">Demo 3</a>
+				</nav> -->
+            </br></br>
+            </header>
+            <section>	
+            		
+                <div id="container_demo" >
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            </br></br> 
+                            <form  id="login-form" method="post" autocomplete="on">
+                                <h1>Log in</h1> 
+                                <p> 
+                                    <label for="username" class="uname" data-icon="u" > Your email or username </label>
+                                    <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+                                </p>
+                                <p> 
+                                    <label for="password" class="youpasswd" data-icon="p"> Your password </label>
+                                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                </p>
+                                <p class="keeplogin"> 
+									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+									<label for="loginkeeping">Keep me logged in</label>
+								</p>
+                                <p class="login button"> 
+                                    <input id='btn' type="button" value="Login" /> 
+								</p>
+                                <p class="change_link">
+									Not a member yet ?
+									<a href="#toregister" class="to_register">Join us</a>
+								</p>
+                            </form>
+                        </div>
 
-<block name="footer">
-	<div class="footwrap" align="center">
-	<div><p>Copyright 2012-2014 www.99mi.com All Rights Reserved 京ICP备13035787号</p></div>
-	<div class="foot-img" align="center">
-		<img src="__PUBLIC__/Img/zj_01.jpg"/>
-		<img src="__PUBLIC__/Img/zj_02.jpg"/>
-		<img src="__PUBLIC__/Img/zj_03.jpg"/>
-		<img src="__PUBLIC__/Img/zj_04.jpg"/>
-		<img src="__PUBLIC__/Img/zj_05.jpg"/>
-	</div>
-</div>
+                        <div id="register" class="animate form">
+                            <form  id="register-form" method="post" action="{:U('register')}" autocomplete="on"> 
+                                <h1> Sign up </h1> 
+                                <p> 
+                                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+                                    <input id="usernamesignup" name="username" required="required" type="text" placeholder="mysuperusername690" />
+                                </p>
+                                <p> 
+                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
+                                    <input id="emailsignup" name="email" required="required" type="email" placeholder="mysupermail@mail.com"/> 
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+                                    <input id="passwordsignup" name="pwd" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+                                    <input id="passwordsignup_confirm" name="repwd" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                </p>
+                                <p class="signin button"> 
+									<input  type="submit" value="Sign up"/> 
+								</p>
+                                <p class="change_link">  
+									Already a member ?
+									<a href="#tologin" class="to_register"> Go and log in </a>
+								</p>
+                            </form>
+                        </div>
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
+
 
 <script>
 $(function(){
-	
-	$('#btn').click(function(){
-		var $uname = $('#username').val();
-		var $pwd = $('#pwd').val();
-		$action = $('#register_form').attr('action');
-		
-		$.post($action,{username:$uname,upwd:$pwd},function(data){
-			if(typeof(data.msg)!='undefined'){alert(data.msg);}
-			window.location.href=data.url;
-			
-		});
-	})
-	
+    
+    $('#btn').click(function(){
+        var user_info = $('#login-form').serialize();  
+        $.post('login',user_info,function(data){
+            if(data.status=='0'){
+                alert(data.msg);
+            }else{
+                 window.location.href=data.url;
+            }
+           
+            
+        });
+    })
+
+     $('#signup-btn').click(function(){
+        var signup_info = $('#register-form').serialize();  
+        $.post('register',signup_info,function(data){
+            if(data.status=='0'){
+                alert(data.msg);
+            }else{
+                 window.location.href=data.url;
+            }
+           
+            
+        });
+    })
+    
 })
 </script>
-</block>
+</html>

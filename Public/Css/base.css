@@ -1,0 +1,13 @@
+a {
+	color: #55acee;
+}
+a:hover {
+	color: #339BEB;
+}
+a:focus,
+a:active {
+	outline: none;
+}
+a:visited { 
+	color: #55acee; 
+} 
