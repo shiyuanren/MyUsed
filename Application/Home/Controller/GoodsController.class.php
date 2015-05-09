@@ -67,19 +67,24 @@ class GoodsController extends Controller {
             foreach($info as $file){
                 $photo_info=$file['savepath'].$file['savename'];
                 $thumb_info=$file['savepath'].'s_'.$file['savename'];
+                $avater_info=$file['savepath'].'p_'.$file['savename'];
 
                 //$path='thumb/'.$file['savename'];
                 $image->open('./Uploads/'.$photo_info);
                 // 按照原图的比例生成一个最大为150*150的缩略图并保存为thumb.jpg
                 $image->thumb(262.5,175,\Think\Image::IMAGE_THUMB_FILLED)->save('./Uploads/'.$thumb_info);
 
-                $image->thumb(539,300,\Think\Image::IMAGE_THUMB_FILLED)->save('./Uploads/'.$photo_info);
+                //$image->thumb(130,130,\Think\Image::IMAGE_THUMB_SCALE)->save('./Uploads/'.$avater_info);
+
+                echo $photo_info;
+
+                //$this->ajaxReturn($photo_info);
             }
         }
-        return array('thumb'=>$thumb_info,
+       /* return array('thumb'=>$thumb_info,
                     'avater'=>$photo_info,
 
-            );
+            );*/
     }
 
     public function release(){
@@ -88,30 +93,23 @@ class GoodsController extends Controller {
         if(IS_POST){
             $data=array();
 
-           // $image_Info=$this->uploadOne();
-           // $data['photo']=$image_Info['thumb'];
-            $product=I('product');
-            dump($product);
-
-            $product=I('seller');
-            dump($product);
-
-            die;
-
             $data['product_name']=I('product_name',0,'');
             $data['description']=I('description');
             $data['price']=I('price',0,'float');
             $data['quantity']=I('quantity',0,'int');
             $data['category_id']=I('select',0,'int');
-            $data['uid']=session('user_id');
+            $data['uid']=session('user_id');     //可以根据uid设置卖家联系方式
+
+            $data['photo']=I('photo');
+            $data['seller']=I('seller');
+            $data['sellerphone']=I('sellerphone');
+            $data['wechat']=I('wechat');
 
            
 
             $product_id=D('Goods')->addGoods($data);
 
-            //header("Location:".U('release',array('pid'=>$product_id)));
-
-            return $product_id;
+            $this->ajaxReturn($product_id);
         }else{
             $category_list=M('Category')->getField('id,category_name');
             //print_r($category_list);
@@ -147,7 +145,7 @@ class GoodsController extends Controller {
         $upload = new \Think\Upload($config);
         $info= $upload->upload();
 
-        $data['product_id']=I("get.pid");
+        $data['product_id']=I("post.product_id");
         dump($data['product_id']);
        if(!$info){
             $this->error($upload->getError());
