@@ -40,26 +40,35 @@
               <a class="navbar-brand" href="{:U('Home/Index/index')}"><img src="__IMG__/logo.png" alt="logo"></a>
               <!-- #Logo Ends -->
 
+
              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
+
             </div>
 
+           <!--  <ul class="nav nav-pills">
+            	<li role="presentation" class="active"><a href="#">Home</a></li>
+            	<li role="presentation"><a href="#">Profile</a></li>
+            	<li role="presentation"><a href="#">Messages</a></li>
+            </ul> -->
+
+
             <!-- Nav Starts -->
-				<block name="navbar">
-					<div class="navbar-collapse  collapse">
-						<ul class="nav navbar-nav navbar-right scroll">
-							<li class="active"><a href="#works">Home</a></li>
-							<li ><a href="#about">About</a></li>
-							<li ><a href="#partners">Partners</a></li>
-							<li ><a href="#contact">Contact</a></li>
-						</ul>
-					</div>
-				</block>
-				<!-- #Nav Ends -->
+             <div class="navbar-collapse  collapse">
+             </br>
+              <ul class="nav nav-pills navbar-right">
+                 <li role="presentation" class="active"><a href="#Home"  class="navbar-link">Home</a></li>
+                 <li role="presentation"><a href="#Sign" class="navbar-link">Sign In</a></li>
+                 <li role="presentation"><a href="#MyBooks" class="navbar-link">My Books</a></li>
+                 <li role="presentation"><a href="#contact" class="navbar-link">Contact</a></li>
+              </ul>
+            </div>
+
+            <!-- #Nav Ends -->
 
           </div>
         </div>
@@ -68,6 +77,8 @@
     </div>
 </br></br>
 <!-- #Header Starts -->
+
+
 
 		<block name="middle">
 			内容区
@@ -102,5 +113,4 @@
 		<script type="text/javascript" src="__WORTHY__/js/custom.js"></script>
 
 	</body>
-
 </html>

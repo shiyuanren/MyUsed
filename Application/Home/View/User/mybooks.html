@@ -1,12 +1,23 @@
 <extend name='Public:base1'/>
 
+<block name="navbar">
+	<div class="navbar-collapse  collapse">
+	</br>
+	<ul class="nav navbar-nav navbar-right scroll">
+			<li role="presentation"><a href="{:U('Home/Index/index')}"  class="navbar-link">Home</a></li>
+			<li role="presentation"><a href="{:U('Home/User/login')}" class="navbar-link">Sign In</a></li>
+			<li class="active" role="presentation"><a href="{:U('Home/User/mybooks')}" class="navbar-link">My Books</a></li>
+			<li role="presentation"><a href="#contact" class="navbar-link">Contact</a></li>
+	</ul>
+</div>
+</block>
 
 <block name="middle">
 
 	<script type="text/javascript" src="__WORTHY__/plugins/jquery.min.js"></script>
 <div class="section">
 		<div class="container">
-			
+
 	我的二手书页面，这里是我发布的二手书的列表
 	<foreach name="booksList.books" item="bl">
 		<div class="goods-item">
@@ -14,10 +25,10 @@
 		</div>
 	</foreach>
 	{$booksList.page}
-	
+
 	<a class="registerbtn" href="{:U('Home/Goods/release')}">发布二手书</a>
 
 	</div>
 	</div>
-	
+
 </block>
