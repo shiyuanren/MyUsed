@@ -51,13 +51,14 @@
             <!-- Nav Starts -->
 				<block name="navbar">
 					<div class="navbar-collapse  collapse">
-						<ul class="nav navbar-nav navbar-right scroll">
-							<li class="active"><a href="#works">Home</a></li>
-							<li ><a href="#about">About</a></li>
-							<li ><a href="#partners">Partners</a></li>
-							<li ><a href="#contact">Contact</a></li>
-						</ul>
-					</div>
+					</br>
+					<ul class="nav navbar-nav navbar-right scroll">
+							<li role="presentation"><a href="{:U('Home/Index/index')}"  class="navbar-link">Home</a></li>
+							<li role="presentation"><a href="{:U('Home/User/login')}" class="navbar-link">Sign In</a></li>
+							<li class="active" role="presentation"><a href="{:U('Home/User/mybooks')}" class="navbar-link">My Books</a></li>
+							<li role="presentation"><a href="#contact" class="navbar-link">Contact</a></li>
+					</ul>
+				</div>
 				</block>
 				<!-- #Nav Ends -->
 
