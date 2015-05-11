@@ -96,7 +96,7 @@
 <!-- #Header Starts -->
 
 		
-	<!-- <link href="/MyUsed/Public/Css/mybooks.css" rel="stylesheet"> -->
+	<link href="/MyUsed/Public/Css/mybooks.css" rel="stylesheet">
 
 	<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/jquery.min.js"></script>
 	<div class="section">
@@ -106,7 +106,7 @@
 			<div class="row-fluid">
 				<ul class="breadcrumb">
 					<li>
-						<a href="#"><span class="glyphicon glyphicon-home"></span>Home</a>
+						<a href="<?php echo U('Home/Index/index');?>"><span class="glyphicon glyphicon-home"></span>Home</a>
 					</li>
 					<li><a href="#">My Books</a></li>
 				</ul>
@@ -151,9 +151,9 @@
 										</td>
 										<td class="price-td"><?php echo ($info["price"]); ?></td>
 										<td class="action-td">
-											详情
-											编辑
-											删除
+											<a href="<?php echo U('Category/addCategory');?>" class="button" role="button">详情</a>
+											<a href="<?php echo U('Category/addCategory');?>" class="button" role="button">编辑</a>
+											<a href="<?php echo U('Category/addCategory');?>" class="button" role="button">删除</a>
 										</td>
 									</tr>
 								</table><?php endforeach; endif; ?>

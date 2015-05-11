@@ -22,3 +22,8 @@ td{
   text-align:center;
   valign:middle;
 }
+
+a:link {color:#272727;} /* 没访问过的链接样式 */
+a:visited {color:#272727;} /* 访问过的链接样式 */
+a:hover {color:#272727;} /* 鼠标进入链接区域的链接样式 */
+a:active {color:#272727;} /* 点击链接时的链接样式 */

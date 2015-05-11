@@ -179,7 +179,7 @@
 														<ol class="carousel-indicators">
 															<li data-target="#<?php echo ($gl["product_name"]); ?>" data-slide-to="0" class="active"></li>
 
-															<?php $__FOR_START_16641__=0;$__FOR_END_16641__=$gl["images_count"];for($i=$__FOR_START_16641__;$i < $__FOR_END_16641__;$i+=1){ ?><li data-target="#<?php echo ($gl["product_name"]); ?>" data-slide-to="<?php echo ($i+1); ?>"></li><?php } ?>
+															<?php $__FOR_START_11174__=0;$__FOR_END_11174__=$gl["images_count"];for($i=$__FOR_START_11174__;$i < $__FOR_END_11174__;$i+=1){ ?><li data-target="#<?php echo ($gl["product_name"]); ?>" data-slide-to="<?php echo ($i+1); ?>"></li><?php } ?>
 														</ol>
 														<!-- Carousel items-->
 														<div class="carousel-inner">
