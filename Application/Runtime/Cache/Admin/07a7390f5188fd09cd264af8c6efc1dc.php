@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
@@ -15,20 +15,20 @@
         <![endif]-->
         <!-- GLOBAL STYLES -->
         <!-- GLOBAL STYLES -->
-        <script src="__STATIC__/jquery-2.1.3.min.js"></script>
-        <script src="__STATIC__/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/MyUsed/Public/Static/jquery-2.1.3.min.js"></script>
+        <script src="/MyUsed/Public/Static/bootstrap/js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" href="__ASSETS__/plugins/bootstrap/css/bootstrap.css" />
-        <link rel="stylesheet" href="__ASSETS__/css/main.css" />
-        <link rel="stylesheet" href="__ASSETS__/css/theme.css" />
-        <link rel="stylesheet" href="__ASSETS__/css/MoneAdmin.css" />
-        <link rel="stylesheet" href="__ASSETS__/plugins/Font-Awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="/MyUsed/Public/Static/assets/plugins/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" href="/MyUsed/Public/Static/assets/css/main.css" />
+        <link rel="stylesheet" href="/MyUsed/Public/Static/assets/css/theme.css" />
+        <link rel="stylesheet" href="/MyUsed/Public/Static/assets/css/MoneAdmin.css" />
+        <link rel="stylesheet" href="/MyUsed/Public/Static/assets/plugins/Font-Awesome/css/font-awesome.css" />
 
 
         <!--END GLOBAL STYLES -->
 
         <!-- PAGE LEVEL STYLES -->
-        <link rel="stylesheet" href="__ASSETS__/css/bootstrap-fileupload.min.css" />
+        <link rel="stylesheet" href="/MyUsed/Public/Static/assets/css/bootstrap-fileupload.min.css" />
         <!-- END PAGE LEVEL  STYLES -->
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -59,7 +59,7 @@
                 <header class="navbar-header">
 
                     <a href="index.html" class="navbar-brand">
-                        <img src="__ASSETS__/img/logo.png" alt="" /></a>
+                        <img src="/MyUsed/Public/Static/assets/img/logo.png" alt="" /></a>
                     </header>
                     <!-- END LOGO SECTION -->
                     <ul class="nav navbar-top-links navbar-right">
@@ -287,7 +287,7 @@
                     <li><a href="#"><i class="icon-gear"></i> Settings </a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="{:U('Login/login')}"><i class="icon-signout"></i> Logout </a>
+                    <li><a href="<?php echo U('Login/login');?>"><i class="icon-signout"></i> Logout </a>
                     </li>
                 </ul>
 
@@ -306,7 +306,7 @@
 <div id="left">
     <div class="media user-media well-small">
         <a class="user-link" href="#">
-            <img class="media-object img-thumbnail user-img" alt="User Picture" src="__ASSETS__/img/user.gif" />
+            <img class="media-object img-thumbnail user-img" alt="User Picture" src="/MyUsed/Public/Static/assets/img/user.gif" />
         </a>
         <br />
         <div class="media-body">
@@ -348,7 +348,7 @@
                   <ul class="collapse" id="component-nav">
 
                     <li class=""><a href="#"><i class="icon-angle-right"></i> 新增会员 </a></li>
-                    <li class=""><a href="{:U('User/lists')}"><i class="icon-angle-right"></i> 会员列表 </a></li>
+                    <li class=""><a href="<?php echo U('User/lists');?>"><i class="icon-angle-right"></i> 会员列表 </a></li>
                 </ul>
             </li>
 
@@ -363,9 +363,9 @@
                     <!--   &nbsp; <span class="label label-success">5</span>&nbsp; -->
                 </a>
                 <ul class="in" id="form-nav">
-                    <li class=""><a href="{:U('Goods/add')}"><i class="icon-angle-right"></i> 新增商品 </a></li>
-                    <li class=""><a href="{:U('Goods/lists')}"><i class="icon-angle-right"></i> 商品列表 </a></li>
-                    <li class=""><a href="{:U('Category/lists')}"><i class="icon-angle-right"></i> 商品分类 </a></li>
+                    <li class=""><a href="<?php echo U('Goods/add');?>"><i class="icon-angle-right"></i> 新增商品 </a></li>
+                    <li class=""><a href="<?php echo U('Goods/lists');?>"><i class="icon-angle-right"></i> 商品列表 </a></li>
+                    <li class=""><a href="<?php echo U('Category/lists');?>"><i class="icon-angle-right"></i> 商品分类 </a></li>
                        <!--  <li class=""><a href="forms_fileupload.html"><i class="icon-angle-right"></i> FileUpload </a></li>
                        <li class=""><a href="forms_editors.html"><i class="icon-angle-right"></i> WYSIWYG / Editor </a></li> -->
                    </ul>
@@ -383,9 +383,9 @@
                     <!--   &nbsp; <span class="label label-success">5</span>&nbsp; -->
                 </a>
                 <ul class="in" id="pagesr-nav">
-                    <!-- <li class=""><a href="{:U('Goods/add')}"><i class="icon-angle-right"></i> 新增商品 </a></li> -->
-                    <li class=""><a href="{:U('Order/lists')}"><i class="icon-angle-right"></i> 订单列表 </a></li>
-                    <li class=""><a href="{:U('Order/statistics')}"><i class="icon-angle-right"></i> 订单统计 </a></li>
+                    <!-- <li class=""><a href="<?php echo U('Goods/add');?>"><i class="icon-angle-right"></i> 新增商品 </a></li> -->
+                    <li class=""><a href="<?php echo U('Order/lists');?>"><i class="icon-angle-right"></i> 订单列表 </a></li>
+                    <li class=""><a href="<?php echo U('Order/statistics');?>"><i class="icon-angle-right"></i> 订单统计 </a></li>
                        <!--  <li class=""><a href="forms_fileupload.html"><i class="icon-angle-right"></i> FileUpload </a></li>
                        <li class=""><a href="forms_editors.html"><i class="icon-angle-right"></i> WYSIWYG / Editor </a></li> -->
                    </ul>
@@ -401,117 +401,66 @@
        <!--PAGE CONTENT -->
        <div id="content">
 
-        <block name="content">
-            <div class="inner">
-                <div class="row">
-                    <div class="col-lg-12">
+        
+    <div class="inner">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2> 会员管理 </h2>
+			</div>
 
-
-                        <h2> 大标题 </h2>
-
-
-
-                    </div>
-                </div>
+			<div class="col-lg-4">
+			</br>
+				<form role="form" id='register_form' action="<?php echo U('User/detail');?>" method='post'>
+				<div><input type="search" name="search_user" placeholder="昵称"/> &nbsp;&nbsp;&nbsp;<button type="submit" >查找</button></div>
+				
+				</form>
+			</div>
+        </div>
 
                 <hr />
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="box">
-                            <header class="dark">
-                                <div class="icons"><i class="icon-cloud-upload"></i></div>
-                                <h5>小标题</h5>
-                            </header>
-                            <div class="body">
-                                <form class="form-horizontal">
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-4">Browser Default</label>
-                                        <div class="col-lg-8"><input type="file" /></div>
-                                    </div>
+    	<div class="row">
+		    <div class="col-lg-12">
+		        <div class="box">
+		            <header class="dark">
+		                <div class="icons"><i class="icon-cloud-upload"></i></div>
+		                <h5>会员列表</h5>
+		            </header>
+		            <div class="body">
+		    			<table class="table table-striped table-hover">
+		<thead>
+			<th>Uid</th>
+			<th>用户名</th>
+			<th>IP</th>
+			<th>创建时间</th>
+			<th>最后登录时间</th>
+			<th>操作</th>
+		</thead>
+		<tbody>
+			<?php if(is_array($user_list["lists"])): foreach($user_list["lists"] as $key=>$ul): ?><tr>
+				<td><?php echo ($ul["id"]); ?></td>
+				<td><?php echo ($ul["uname"]); ?></td>
+				<td><?php echo ($ul["ip"]); ?></td>
+				<td><?php echo (date("Y-m-d H:i:s",$ul["create_time"])); ?></td>
+				<td><?php echo (date("Y-m-d H:i:s",$ul["last_time"])); ?></td>
+				<td>
+					<a href="<?php echo U('User/detail',array('id'=>$ul['id']));?>">查看</a>
+					<a href="<?php echo U('User/edit',array('id'=>$ul['id']));?>">编辑</a> 
+					<a href="<?php echo U('User/delete',array('id'=>$ul['id']));?>">删除</a></td>
+			</tr><?php endforeach; endif; ?>
+		</tbody>
+		<tfoot>
+			<th colspan="6"><?php echo ($user_list["page"]); ?></th>
+		</tfoot>
+	</table>
+		            </div>
+		        </div>
+		    </div>
+        </div>
+    </div>
 
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-4">Bootstrap Style</label>
-                                        <div class="col-lg-8">
-                                            <div class="fileupload fileupload-new" data-provides="fileupload">
-
-
-
-                                                <div class="input-group">
-
-
-                                                    <span class="btn btn-file btn-info">
-                                                        <span class="fileupload-new">Select file</span>
-                                                        <span class="fileupload-exists">Change</span>
-                                                        <input type="file" />
-                                                    </span>
-                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
-
-                                                    <br /> <br />
-                                                    <div class="col-lg-3">
-                                                        <i class="icon-file fileupload-exists"></i>
-                                                        <span class="fileupload-preview"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-4">No Input</label>
-                                        <div class="col-lg-8">
-                                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                                <span class="btn btn-file btn-default">
-                                                    <span class="fileupload-new">Select file</span>
-                                                    <span class="fileupload-exists">Change</span>
-                                                    <input type="file" />
-                                                </span>
-                                                <span class="fileupload-preview"></span>
-                                                <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-4">Image Upload</label>
-                                        <div class="col-lg-8">
-                                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                                <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
-                                                <div>
-                                                    <span class="btn btn-file btn-success"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
-                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-4">Pre Defined Image</label>
-                                        <div class="col-lg-8">
-                                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="__ASSETS__/img/demoUpload.jpg" alt="" /></div>
-                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                                                <div>
-                                                    <span class="btn btn-file btn-primary"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
-                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="alert alert-warning"><strong>Notice!</strong> Image preview only works in IE10+, FF3.6+, Chrome6.0+ and Opera11.1+. In older browsers and Safari, the filename is shown instead.</div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+         <!--END PAGE CONTENT -->
 
 
-
-                </div>
-
-
-
-
-            </div>
-
-            <!--END PAGE CONTENT -->
-
-        </block>
 
 
     </div>
@@ -530,13 +479,13 @@
 
 
 
-<!-- <script src="__ASSETS__/plugins/jquery-2.0.3.min.js"></script> -->
-<!-- <script src="__ASSETS__/plugins/bootstrap/js/bootstrap.min.js"></script> -->
-<script src="__ASSETS__/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<!-- <script src="/MyUsed/Public/Static/assets/plugins/jquery-2.0.3.min.js"></script> -->
+<!-- <script src="/MyUsed/Public/Static/assets/plugins/bootstrap/js/bootstrap.min.js"></script> -->
+<script src="/MyUsed/Public/Static/assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 <!-- END GLOBAL SCRIPTS -->
 
 <!-- PAGE LEVEL SCRIPTS -->
-<script src="__ASSETS__/plugins/jasny/js/bootstrap-fileupload.js"></script>
+<script src="/MyUsed/Public/Static/assets/plugins/jasny/js/bootstrap-fileupload.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 
 

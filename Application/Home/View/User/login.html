@@ -26,26 +26,9 @@
     </head>
     <body>
         <div class="container">
-            <!-- Codrops top bar -->
-           <!--  <div class="codrops-top">
-                <a href="">
-                    <strong>&laquo; Previous Demo: </strong>Responsive Content Navigator
-                </a>
-                <span class="right">
-                    <a href=" http://tympanus.net/codrops/2012/03/27/login-and-registration-form-with-html5-and-css3/">
-                        <strong>Back to the Codrops Article</strong>
-                    </a>
-                </span>
-                <div class="clr"></div>
-            </div> --><!--/ Codrops top bar -->
+
             <header>
-              <!--   <h1>Login and Registration Form <span>with HTML5 and CSS3</span></h1>
-				<nav class="codrops-demos">
-					<span>Click <strong>"Join us"</strong> to see the form switch</span>
-					<a href="index.html">Demo 1</a>
-					<a href="index2.html" class="current-demo">Demo 2</a>
-					<a href="index3.html">Demo 3</a>
-				</nav> -->
+
         <!-- Header Starts -->
         <div class="navbar-wrapper">
               <div class="container">
@@ -68,12 +51,31 @@
                     <!-- Nav Starts -->
                     <div class="navbar-collapse  collapse">
           					</br>
-          					<ul class="nav navbar-nav navbar-right scroll">
-          							<li role="presentation"><a href="{:U('Home/Index/index')}"  class="navbar-link">Home</a></li>
-          							<li class="active" role="presentation"><a href="{:U('Home/User/login')}" class="navbar-link">Sign In</a></li>
-          							<li role="presentation"><a href="{:U('Home/User/mybooks')}" class="navbar-link">My Books</a></li>
-          							<li role="presentation"><a href="#contact" class="navbar-link">Contact</a></li>
-          					</ul>
+                    <ul class="nav navbar-nav navbar-right scroll">
+                  			<li><a href="{:U('Home/Index/index')}">Home</a></li>
+                  			<li><a href="{:U('Home/User/mybooks')}">My Books</a></li>
+                  			<!-- <li><a href="#contact">Contact</a></li> -->
+                  			<li  class="active"><a href="{:U('Home/User/login')}">Sign In</a></li>
+                  			<li><a href="#"></a></li>
+
+                        <li class="dropdown">
+                  					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                  						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                  						<if condition="!empty($_SESSION['user_name'])" >
+                  							{$Think.session.user_name}
+                  						<else/>
+                  							Account
+                  						</if>
+                  							<span class="caret"></span></a>
+                  					<ul class="dropdown-menu" role="menu">
+                  						<li class="disabled"><a href="#">My UsedBooks</a></li>
+                  						<li class="disabled"><a href="#">Release Books</a></li>
+                  						<li class="disabled"><a href="#">Account Settings</a></li>
+                  						<li class="divider"></li>
+                  						<li><a href="{:U('Home/User/logout')}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>Log Out</a></li>
+                  					</ul>
+                  			</li>
+                  	</ul>
           				</div>
         				<!-- #Nav Ends -->
 

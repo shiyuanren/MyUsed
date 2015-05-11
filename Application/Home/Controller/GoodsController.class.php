@@ -11,34 +11,36 @@ class GoodsController extends Controller {
     	$this->display();
     }
 
+
+
     public function addToCart(){
-    	
+
 
         $id=I('id',0,'int');
         $num=I('num','0','int');
         $uid=session('user_id');
 
-        if($uid){    
-            //已登录处理 
-            D('Cart')->addToCart($uid,$id,$num);           
+        if($uid){
+            //已登录处理
+            D('Cart')->addToCart($uid,$id,$num);
         }else{
             //未登录处理,放入session
             $goods[$id]=$num;
             $cart=session('cart');
-           
+
             if($cart==''){
                 //session('cart',$goods);
                 $cart=$goods;
             }else{
-                $cart=$goods+$cart;    
-            }    
+                $cart=$goods+$cart;
+            }
             session('cart',$cart);
         }
-        
+
         $this->ajaxReturn(array(
                 'status'=>1,
                 'info' => "加入购物车成功",
-            ));   
+            ));
     }
 
     public function uploadOne(){
@@ -61,8 +63,8 @@ class GoodsController extends Controller {
         }else{
             //$this->success('上传成功');
 
-            $image = new \Think\Image(); 
-            
+            $image = new \Think\Image();
+
 
             foreach($info as $file){
                 $photo_info=$file['savepath'].$file['savename'];
@@ -96,7 +98,7 @@ class GoodsController extends Controller {
             $data['product_name']=I('product_name',0,'');
             $data['description']=I('description');
             $data['price']=number_format(I('price',0,'float'),2);
-           
+
             $data['quantity']=I('quantity',0,'int');
             $data['category_id']=I('select',0,'int');
             $data['uid']=session('user_id');     //可以根据uid设置卖家联系方式
@@ -106,7 +108,7 @@ class GoodsController extends Controller {
             $data['sellerphone']=I('sellerphone');
             $data['wechat']=I('wechat');
 
-           
+
 
             $product_id=D('Goods')->addGoods($data);
 
@@ -122,17 +124,17 @@ class GoodsController extends Controller {
     }
 
 
-    public function uploadImgs(){   
-        if(IS_POST)  { 
+    public function uploadImgs(){
+        if(IS_POST)  {
                 echo json_encode($this->uploadImages());
         }else{
              $this->display();
         }
-           
+
     }
 
     public function uploadImages(){
-        
+
         $out=[];
 
         $config = array(
@@ -154,7 +156,7 @@ class GoodsController extends Controller {
             $out=['msg'=>$upload->getError()];
         }else{
             //$this->success('上传成功');
-            $image = new \Think\Image(); 
+            $image = new \Think\Image();
             foreach($info as $file){
                 $data['image']=$file['savepath'].$file['savename'];
                 $image->open('./Uploads/'.$data['image']);

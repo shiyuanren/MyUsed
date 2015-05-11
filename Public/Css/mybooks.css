@@ -1,0 +1,24 @@
+td{
+  vertical-align:middle;
+  text-align:center;
+}
+
+.photo-td{
+
+  width:160px;
+
+}
+
+.price-td{
+  width:140px;
+  vertical-align:middle;
+  text-align:center;
+  valign:middle;
+}
+
+.action-td{
+  width:100px;
+  vertical-align:middle;
+  text-align:center;
+  valign:middle;
+}

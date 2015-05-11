@@ -14,10 +14,10 @@ class GoodsModel extends Model {
         return $this->add($data);
     }
 
-   
+
 
      public function getGoodsList(){
-     	
+
         $page=I('p',1,"int");
      	$limit=12;
 
@@ -40,9 +40,9 @@ class GoodsModel extends Model {
 
        // die;
 
-        
 
-      
+
+
     	return array("lists"=>$data,"page"=>$show);
     }
 
@@ -64,11 +64,11 @@ class GoodsModel extends Model {
 
     public function getGoodsByUser($uid){
         $page=I('p',1,'int');
-        $limit=5;
+        $limit=10;
 
         $count=$this->where('uid=%d',$uid)->count();//两条where查询
         $data=$this->where('uid=%d',$uid)->order('create_time DESC')->page($page.','.$limit)->select();
-        
+
         $Page=new \Think\Page($count,$limit);
         $show=$Page->show();
 
@@ -78,6 +78,34 @@ class GoodsModel extends Model {
             'page' => $show,
         );
 
+    }
+
+    public function searchByUser($user_id,$keyword){
+      $where['product_name']=array('like','%'.$keyword.'%');
+      $where['description']=array('like','%'.$keyword.'%');
+      $where['seller']=$keyword;
+      $where['_logic']='or';
+      $map['_complex']=$where;
+      $map['uid']=$user_id;
+
+      $page=I('p',1,'int');
+      $limit=10;
+
+      $count=$this->where($map)->count();
+      $data=$this->where($map)->order('create_time DESC')->page($page.','.$limit)->select();
+
+      $Page=new \Think\Page($count,$limit);
+      $show=$Page->show();
+
+
+
+      dump($this->getLastSql());
+
+
+      return array(
+          'books'=> $data,
+          'page' => $show,
+      );
     }
 
 

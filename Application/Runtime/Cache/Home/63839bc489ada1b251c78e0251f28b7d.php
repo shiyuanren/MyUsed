@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en">
@@ -12,13 +12,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
-		<link href="__WORTHY__/bootstrap/css/bootstrap.css" rel="stylesheet">
-		<!-- <link href="__STATIC__/bootstrap/css/bootstrap.css" rel="stylesheet"> -->
-		<link href="__WORTHY__/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-		<link href="__WORTHY__/css/animations.css" rel="stylesheet">
-		<link href="__WORTHY__/css/style.css" rel="stylesheet">
-		<!-- <link href="__WORTHY__/css/style1.css" rel="stylesheet"> -->
-		<link href="__WORTHY__/css/custom.css" rel="stylesheet">
+		<link href="/MyUsed/Public/Static/worthy/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<!-- <link href="/MyUsed/Public/Static/bootstrap/css/bootstrap.css" rel="stylesheet"> -->
+		<link href="/MyUsed/Public/Static/worthy/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="/MyUsed/Public/Static/worthy/css/animations.css" rel="stylesheet">
+		<link href="/MyUsed/Public/Static/worthy/css/style.css" rel="stylesheet">
+		<!-- <link href="/MyUsed/Public/Static/worthy/css/style1.css" rel="stylesheet"> -->
+		<link href="/MyUsed/Public/Static/worthy/css/custom.css" rel="stylesheet">
 
 
 	</head>
@@ -37,7 +37,7 @@
           <div class="container">
             <div class="navbar-header" style="height:80px">
               <!-- Logo Starts -->
-              <a class="navbar-brand" href="{:U('Home/Index/index')}"><img src="__IMG__/logo.png" alt="logo"></a>
+              <a class="navbar-brand" href="<?php echo U('Home/Index/index');?>"><img src="/MyUsed/Public/Img/logo.png" alt="logo"></a>
               <!-- #Logo Ends -->
 
              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -49,17 +49,17 @@
             </div>
 
             <!-- Nav Starts -->
-				<block name="navbar">
+				
 					<div class="navbar-collapse  collapse">
 					</br>
 					<ul class="nav navbar-nav navbar-right scroll">
-							<li role="presentation"><a href="{:U('Home/Index/index')}"  class="navbar-link">Home</a></li>
-							<li role="presentation"><a href="{:U('Home/User/login')}" class="navbar-link">Sign In</a></li>
-							<li class="active" role="presentation"><a href="{:U('Home/User/mybooks')}" class="navbar-link">My Books</a></li>
+							<li role="presentation"><a href="<?php echo U('Home/Index/index');?>"  class="navbar-link">Home</a></li>
+							<li role="presentation"><a href="<?php echo U('Home/User/login');?>" class="navbar-link">Sign In</a></li>
+							<li class="active" role="presentation"><a href="<?php echo U('Home/User/mybooks');?>" class="navbar-link">My Books</a></li>
 							<li role="presentation"><a href="#contact" class="navbar-link">Contact</a></li>
 					</ul>
 				</div>
-				</block>
+				
 				<!-- #Nav Ends -->
 
           </div>
@@ -70,9 +70,9 @@
 </br></br>
 <!-- #Header Starts -->
 
-		<block name="middle">
+		
 			内容区
-		</block>
+		
 
 	<footer>
 		<div class="subfooter">
@@ -93,14 +93,14 @@
 		<!-- Jquery and Bootstap core js files -->
 
 
-		<!-- // <script type="text/javascript" src="__WORTHY__/plugins/jquery.min.js"></script> -->
-		<script type="text/javascript" src="__WORTHY__/bootstrap/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="__WORTHY__/plugins/modernizr.js"></script>
-		<script type="text/javascript" src="__WORTHY__/plugins/isotope/isotope.pkgd.min.js"></script>
-		<script type="text/javascript" src="__WORTHY__/plugins/jquery.backstretch.min.js"></script>
-		<script type="text/javascript" src="__WORTHY__/plugins/jquery.appear.js"></script>
-		<script type="text/javascript" src="__WORTHY__/js/template.js"></script>
-		<script type="text/javascript" src="__WORTHY__/js/custom.js"></script>
+		<!-- // <script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/jquery.min.js"></script> -->
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/modernizr.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/isotope/isotope.pkgd.min.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/jquery.backstretch.min.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/jquery.appear.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/js/template.js"></script>
+		<script type="text/javascript" src="/MyUsed/Public/Static/worthy/js/custom.js"></script>
 
 	</body>
 

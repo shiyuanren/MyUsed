@@ -7,7 +7,7 @@ class UserModel extends Model {
     }
 
      public function getUserList(){
-        
+
      	$page=I('p',1,"int");
      	$limit=5;
 

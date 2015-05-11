@@ -70,6 +70,7 @@ class UserModel extends Model {
 			$info['msg']="登录成功";
 			$info['url']=U('/Home/Index/index');
 			session('user_id',$rs['id']);
+			session('user_name',$rs['uname']);
 		}
 
 		//dump(session('user_id'));die;

@@ -4,10 +4,38 @@
 	<div class="navbar-collapse  collapse">
 	</br>
 	<ul class="nav navbar-nav navbar-right scroll">
-			<li  class="active" role="presentation"><a href="{:U('Home/Index/index')}"  class="navbar-link">Home</a></li>
-			<li role="presentation"><a href="{:U('Home/User/login')}" class="navbar-link">Sign In</a></li>
-			<li role="presentation"><a href="{:U('Home/User/mybooks')}" class="navbar-link">My Books</a></li>
-			<li role="presentation"><a href="#contact" class="navbar-link">Contact</a></li>
+			<li class="active"><a href="{:U('Home/Index/index')}">Home</a></li>
+			<li><a href="{:U('Home/User/mybooks')}">My Books</a></li>
+			<!-- <li><a href="#contact">Contact</a></li> -->
+			<li><a href="{:U('Home/User/login')}">Sign In</a></li>
+			<li><a href="#"></a></li>
+
+			<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+
+						<if condition="!empty($_SESSION['user_name'])" >
+							{$Think.session.user_name}
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="{:U('Home/User/mybooks')}">My UsedBooks</a></li>
+								<li><a href="{:U('Home/Goods/release')}">Release Books</a></li>
+								<li><a href="#">Account Settings</a></li>
+								<li class="divider"></li>
+								<li><a href="{:U('Home/User/logout')}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>Log Out</a></li>
+							</ul>
+						<else/>
+								Account
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li class="disabled"><a href="#">My UsedBooks</a></li>
+								<li class="disabled"><a href="#">Release Books</a></li>
+								<li class="disabled"><a href="#">Account Settings</a></li>
+								<li class="divider"></li>
+								<li><a href="{:U('Home/User/logout')}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>Log Out</a></li>
+							</ul>
+						</if>
+			</li>
 	</ul>
 </div>
 </block>
@@ -16,30 +44,12 @@
 
 	<script src="__JS__/image.js"></script>
 	<script type="text/javascript" src="__WORTHY__/plugins/jquery.min.js"></script>
-	<!-- banner start -->
-	<!-- ================ -->
-	<!-- <div id="banner" class="banner">
-	<div class="banner-image"></div>
-	<div class="banner-caption">
-	<div class="container">
-	<div class="row">
-	<div class="col-md-8 col-md-offset-2 object-non-visible" data-animation-effect="fadeIn">
-	<h1 class="text-center">We are <span>Worthy</span></h1>
-	<p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos debitis provident nulla illum minus enim praesentium repellendus ullam cupiditate reiciendis optio voluptatem, recusandae nobis quis aperiam, sapiente libero ut at.</p>
-</div>
-</div>
-</div>
-</div>
-</div> -->
-<!-- banner end -->
-
-
-
 
 <!-- section start -->
 <!-- ================ -->
 <div class="section">
 	<div class="container">
+		<h1 class="text-center title" id="portfolio">Portfolio</h1>
 		<div class="separator"></div>
 		<p class="lead text-center">Lorem ipsum dolor sit amet laudantium molestias similique.<br> Quisquam incidunt ut laboriosam.</p>
 		<br>
@@ -47,14 +57,14 @@
 			<div class="col-md-12">
 
 				<!-- isotope filters start -->
-				<div class="filters text-center">
+				<!-- <div class="filters text-center">
 					<ul class="nav nav-pills">
 						<li class="active"><a href="#" data-filter="*">All</a></li>
 						<li><a href="#" data-filter=".web-design">Web design</a></li>
 						<li><a href="#" data-filter=".app-development">App development</a></li>
 						<li><a href="#" data-filter=".site-building">Site building</a></li>
 					</ul>
-				</div>
+				</div> -->
 				<!-- isotope filters end -->
 
 				<!-- portfolio items start -->

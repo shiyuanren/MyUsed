@@ -17,7 +17,7 @@ class UserController extends CommonController {
 
    /* public function select(){
         $keyWord=I('search_user','');
-       
+
         $this->assign('user_info',$userInfo);
         $this->display('detail');
         //Header('Location:'.U('Admin/User/detail/userInfo='.$userInfo));
@@ -79,6 +79,6 @@ class UserController extends CommonController {
             }
         }else{
             $this->display();
-        }      
+        }
     }*/
 }
