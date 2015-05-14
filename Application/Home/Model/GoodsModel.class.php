@@ -18,7 +18,7 @@ class GoodsModel extends Model {
 
      public function getGoodsList(){
 
-        $page=I('p',1,"int");
+      $page=I('p',1,"int");
      	$limit=12;
 
      	$count=$this->count();
@@ -64,10 +64,11 @@ class GoodsModel extends Model {
 
     public function getGoodsByUser($uid){
         $page=I('p',1,'int');
-        $limit=10;
+        $limit=5;
 
         $count=$this->where('uid=%d',$uid)->count();//两条where查询
         $data=$this->where('uid=%d',$uid)->order('create_time DESC')->page($page.','.$limit)->select();
+
 
         $Page=new \Think\Page($count,$limit);
         $show=$Page->show();

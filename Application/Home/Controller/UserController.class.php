@@ -91,5 +91,32 @@ class UserController extends Controller {
 			}
 		}
 
+    public function accouts(){
+
+
+      if(IS_POST){
+        // dump("123");die;
+        $uid=session('user_id');
+        // $data['uname']=I('nickname');
+        $data['sex']=I('sex',0,'int');
+        $data['email']=I('email');
+        $data['seller']=I('seller');
+        $data['phonenum']=I('phonenum');
+        $data['wechat']=I('wechat');
+
+        // dump($data);die;
+        $info=D('User')->editAccout($uid,$data);
+        $this->success("账户设置完成");
+
+        // if($info['status']=='0'){
+        //   $this->error($info['msg']);
+        // }else{
+        //   $this->success("账户设置完成");
+        // }
+      }else{
+        $this->display();
+      }
+    }
+
 
 }

@@ -68,7 +68,7 @@
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="<?php echo U('Home/User/mybooks');?>">My UsedBooks</a></li>
 								<li><a href="<?php echo U('Home/Goods/release');?>">Release Books</a></li>
-								<li><a href="#">Account Settings</a></li>
+								<li><a href="<?php echo U('Home/User/accouts');?>">Account Settings</a></li>
 								<li class="divider"></li>
 								<li><a href="<?php echo U('Home/User/logout');?>"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>Log Out</a></li>
 							</ul>
@@ -112,18 +112,7 @@
 		<div class="row object-non-visible" data-animation-effect="fadeIn">
 			<div class="col-md-12">
 
-				<!-- isotope filters start -->
-				<!-- <div class="filters text-center">
-					<ul class="nav nav-pills">
-						<li class="active"><a href="#" data-filter="*">All</a></li>
-						<li><a href="#" data-filter=".web-design">Web design</a></li>
-						<li><a href="#" data-filter=".app-development">App development</a></li>
-						<li><a href="#" data-filter=".site-building">Site building</a></li>
-					</ul>
-				</div> -->
-				<!-- isotope filters end -->
 
-				<!-- portfolio items start -->
 				<div class="isotope-container row grid-space-20">
 
 
@@ -131,8 +120,12 @@
 					<?php if(is_array($goods_list["lists"])): foreach($goods_list["lists"] as $key=>$gl): ?><div class="col-sm-6 col-md-3 isotope-item web-design">
 							<div class="image-box">
 								<div class="overlay-container">
-
-									<img class="img-thumbnail" src="/MyUsed/Uploads/<?php echo ($gl["photo"]); ?>" onload="AutoResizeImage(262.5,175,this)" alt="">
+									<?php if(empty($gl["photo"])): ?><img class="img-thumbnail" src="/MyUsed/Uploads/avatar-80.png"
+											onload="AutoResizeImage(262.5,175,this)" alt="">
+									<?php else: ?>
+									<img class="img-thumbnail" src="/MyUsed/Uploads/<?php echo ($gl["photo"]); ?>"
+										onload="AutoResizeImage(262.5,175,this)" alt=""><?php endif; ?>
+									<!-- <img class="img-thumbnail" src="/MyUsed/Uploads/<?php echo ($gl["photo"]); ?>" onload="AutoResizeImage(262.5,175,this)" alt=""> -->
 
 									<a class="overlay" data-toggle="modal" data-target="#<?php echo ($gl["id"]); ?>">
 										<i class="fa fa-search-plus"></i>
@@ -179,7 +172,7 @@
 														<ol class="carousel-indicators">
 															<li data-target="#<?php echo ($gl["product_name"]); ?>" data-slide-to="0" class="active"></li>
 
-															<?php $__FOR_START_11174__=0;$__FOR_END_11174__=$gl["images_count"];for($i=$__FOR_START_11174__;$i < $__FOR_END_11174__;$i+=1){ ?><li data-target="#<?php echo ($gl["product_name"]); ?>" data-slide-to="<?php echo ($i+1); ?>"></li><?php } ?>
+															<?php $__FOR_START_29900__=0;$__FOR_END_29900__=$gl["images_count"];for($i=$__FOR_START_29900__;$i < $__FOR_END_29900__;$i+=1){ ?><li data-target="#<?php echo ($gl["product_name"]); ?>" data-slide-to="<?php echo ($i+1); ?>"></li><?php } ?>
 														</ol>
 														<!-- Carousel items-->
 														<div class="carousel-inner">

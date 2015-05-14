@@ -50,6 +50,7 @@
 
             <!-- Nav Starts -->
 				
+  <script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/jquery.min.js"></script>
 	<div class="navbar-collapse  collapse">
 	</br>
 	<ul class="nav navbar-nav navbar-right scroll">
@@ -67,7 +68,7 @@
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="<?php echo U('Home/User/mybooks');?>">My UsedBooks</a></li>
 						<li><a href="<?php echo U('Home/Goods/release');?>">Release Books</a></li>
-						<li><a href="<?php echo U('Home/User/accouts');?>">Account Settings</a></li>
+            <li><a href="<?php echo U('Home/User/accouts');?>">Account Settings</a></li>
 						<li class="divider"></li>
 						<li><a href="<?php echo U('Home/User/logout');?>"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>Log Out</a></li>
 					</ul>
@@ -96,85 +97,80 @@
 <!-- #Header Starts -->
 
 		
-	<link href="/MyUsed/Public/Css/mybooks.css" rel="stylesheet">
-	<script type="text/javascript" src="/MyUsed/Public/Static/worthy/plugins/jquery.min.js"></script>
-
-</br></br></br>
+</br></br></br></br>
 <div class="row">
-	<div class="col-md-2"></div>
-	<div class="col-md-7 panel panel-primary">
-		<!-- Default panel contents -->
-		<div class="panel-heading" style="height:50px;">
-			<h4>我的二手书列表</h4>
-		</div>
-		<div class="panel-body">
-			<div class="row">
-				<div class="col-md-7"></div>
-				<div>
-					<form role="form" action="<?php echo U('User/mybooks');?>" method='post'>
-						<div><input type="search text" name="search_books" placeholder="keywords"/>
-							<button type="submit" >查找</button></div>
-						</form>
-					</div>
-				</div>
-			</div>
-
-			<div class="panel-body">
-				<div class="row"></div>
-				<!-- <div class="col-md-1"></div> -->
-
-				<table  width="750">
-					<tr>
-						<td class="photo-td">宝贝</td>
-						<td class="price-td">价格(元)</td>
-						<td class="quantity-td">数量</td>
-						<td class="action-td">操作</td>
-					</tr>
-				</table>
+  <div class="col-md-3"></div>
+  <div class="col-md-5 panel panel-primary">
 
 
-				<!-- <tbody> -->
-				<?php if(is_array($booksList["books"])): foreach($booksList["books"] as $key=>$info): ?></br>
-				<table  width="750">
-					<tr>
-						<td colspan="2" class="photo-td"><?php echo ($info["seller"]); ?>：<?php echo ($info["sellerphone"]); ?></td>
-						<td colspan="2" class="price-td"><?php echo ($info["product_name"]); ?></td>
-						<td class="action-td"><?php echo (date("Y-m-d H:i:s",$info["create_time"])); ?></td>
-					</tr>
-					<!-- </table>
-					<table> -->
-					<tr>
-						<td class="photo-td">
-							<div style="height:130xp;width:130px;border:1px solid #ddd">
-								<?php if(empty($info["photo"])): ?><img class="img-thumbnail" src="/MyUsed/Uploads/avatar-80.png" alt="">
-									<?php else: ?>
-									<img class="img-thumbnail" src="/MyUsed/Uploads/<?php echo ($info["photo"]); ?>" alt=""><?php endif; ?>
-							</div>
-						</td>
-						<td class="photo-desp"><?php echo ($info["description"]); ?></td>
-						<td class="price-td"><?php echo ($info["price"]); ?></td>
-						<td class="quantity-td"><?php echo ($info["quantity"]); ?></td>
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        个人资料
+      </h3>
+    </div>
 
-						<td class="action-td">
-							<!-- <a href="<?php echo U('Goods/detail',array('id'=>$info.id));?>" class="button" role="button">详情</a>
-							<a href="<?php echo U('Category/addCategory');?>">编辑</a>
-							<a href="<?php echo U('Category/addCategory');?>">删除</a> -->
+    <form class="form-horizontal" action="<?php echo U('User/accouts');?>" method="post">
+      <div class="panel-body">
 
-							<a title="查看" href="<?php echo U('Home/Goods/detail',array('id'=>$info['id'],));?>"><span class="glyphicon glyphicon-zoom-in"></span></a>&nbsp;&nbsp;
-							<!-- <a title="编辑" href="<?php echo U('Home/Goods/edit',array('id'=>$info['id'],));?>"><span class="glyphicon glyphicon-edit"></span></a>&nbsp;&nbsp; -->
-							<a title="删除" href="<?php echo U('Home/Goods/delete',array('id'=>$info['id'],));?>"><span class="glyphicon glyphicon-trash"></span></a>&nbsp;&nbsp;
-						</td>
-					</tr>
-				</table><?php endforeach; endif; ?>
-			<?php echo ($booksList["page"]); ?>
-		</div>
+        <div class="col-md-1"></div>
+          <div>
+          <p>亲爱的<?php echo (session('user_name')); ?>，填写真实的资料，有助于好友找到你哦。</p>
+        </div>
+      </br>
 
-		<!-- <div class="panel-footer">
-			<div class="col-md-3"></div>
-			<?php echo ($booksList["page"]); ?>
-		</div> -->
+          <div class="form-group">
+            <lable class="col-md-3 control-label"><span>*</span><span>昵称</span></lable>
+            <div class="col-md-4">
+              <input name="nickname" type="text" disabled="disabled" placeholder=<?php echo (session('user_name')); ?>>
+            </div>
+          </div>
 
-	</div>
+          <div class="form-group">
+            <lable class="col-md-3 control-label"><span>性别</span></lable>
+            <div class="col-md-4" style="margin:8px;">
+              <input name="sex" type="radio" value="0" checked="checked"/><lable><span>男</span></lable>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input name="sex" type="radio" value="1" /><lable><span>女</span></lable>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <lable class="col-md-3 control-label"><span>*</span><span>Email</span></lable>
+            <div class="col-md-4">
+              <input name="email" type="text" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <lable class="col-md-3 control-label"><span>*</span><span>联系人</span></lable>
+            <div class="col-md-4">
+              <input name="seller" type="text" placeholder="张三"/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <lable class="col-md-3 control-label"><span>*</span><span>手机号码</span></lable>
+            <div class="col-md-4">
+              <input name="phonenum" type="text" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <lable class="col-md-3 control-label"><span>微信</span></lable>
+            <div class="col-md-4">
+              <input name="wechat" type="text" />
+            </div>
+          </div>
+
+      </div>
+      <div class="panel-footer">
+        <!-- Panel footer -->
+        <div class="col-md-3"></div>
+        <button type="submit" class="btn">提交</button>
+      </div>
+
+    </form>
+  </div>
 </div>
 
 

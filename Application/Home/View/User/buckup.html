@@ -1,0 +1,119 @@
+<extend name='Public:base1'/>
+
+<block name="navbar">
+	<div class="navbar-collapse  collapse">
+	</br>
+	<ul class="nav navbar-nav navbar-right scroll">
+		<li><a href="{:U('Home/Index/index')}">Home</a></li>
+		<li class="active"><a href="{:U('Home/User/mybooks')}">My Books</a></li>
+		<!-- <li><a href="#contact">Contact</a></li> -->
+		<li><a href="{:U('Home/User/login')}">Sign In</a></li>
+		<li><a href="#"></a></li>
+
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+				<if condition="!empty($_SESSION['user_name'])" >
+					{$Think.session.user_name}
+					<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="{:U('Home/User/mybooks')}">My UsedBooks</a></li>
+						<li><a href="{:U('Home/Goods/release')}">Release Books</a></li>
+						<li><a href="{:U('Home/User/accouts')}">Account Settings</a></li>
+						<li class="divider"></li>
+						<li><a href="{:U('Home/User/logout')}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>Log Out</a></li>
+					</ul>
+					<else/>
+					Account
+					<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li class="disabled"><a href="#">My UsedBooks</a></li>
+						<li class="disabled"><a href="#">Release Books</a></li>
+						<li class="disabled"><a href="#">Account Settings</a></li>
+						<li class="divider"></li>
+						<li><a href="{:U('Home/User/logout')}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>Log Out</a></li>
+					</ul>
+				</if>
+			</li>
+		</ul>
+	</div>
+</block>
+
+<block name="middle">
+	<link href="__CSS__/mybooks.css" rel="stylesheet">
+
+	<script type="text/javascript" src="__WORTHY__/plugins/jquery.min.js"></script>
+	<div class="section">
+		<!-- start: Content -->
+
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<ul class="breadcrumb">
+					<li>
+						<a href="{:U('Home/Index/index')}"><span class="glyphicon glyphicon-home"></span>Home</a>
+					</li>
+					<li><a href="#">My Books</a></li>
+				</ul>
+
+				<!-- <div class="row-fluid"> -->
+				<div class="row">
+					<div class="col-md-6"></div>
+					<div class="col-md-6">
+						<form role="form" action="{:U('User/mybooks')}" method='post'>
+							<div><input type="search text" name="search_books" placeholder="keywords"/>
+								<button type="submit" >查找</button></div>
+							</form>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div style="margin-left:70px;" class="col-md-8">
+							<div>
+							</div>
+							<div style="margin-left:50px;">
+							</br>
+							<table  class="table table-bordered" width="400">
+								<tr>
+									<td class="photo-td">宝贝</td>
+									<td class="price-td">价格(元)</td>
+									<td class="quantity-td">数量</td>
+									<td class="action-td">操作</td>
+								</tr>
+							</table>
+
+							<foreach name="booksList.books" item="info">
+								<table class="table table-bordered" width="500">
+									<tr>
+										<td class="photo-td">{$info.create_time|date="Y-m-d H:i:s",###}</td>
+										<td  colspan="2" class="price-td">{$info.product_name}</td>
+										<td class="action-td">{$info.seller}：{$info.sellerphone}</td>
+									</tr>
+									<tr>
+										<td class="photo-td">
+											<div style="height:130xp;width:130px;border:1px solid #ddd">
+												<img class="img-thumbnail" src="__UPLOADS__/{$info.photo}"
+													onload="AutoResizeImage(262.5,175,this)" alt="">
+											</div>
+										</td>
+										<td class="price-td">{$info.price}</td>
+										<td class="quantity-td">{$info.quantity}</td>
+
+										<td class="action-td">
+											<a href="{:U('Goods/detail',array('id'=>$info.id))}" class="button" role="button">详情</a>
+											<a href="{:U('Category/addCategory')}" class="button" role="button">编辑</a>
+											<a href="{:U('Category/addCategory')}" class="button" role="button">删除</a>
+										</td>
+									</tr>
+								</table>
+							</foreach>
+							{$booksList.page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- </div> -->
+	</div>
+
+</block>

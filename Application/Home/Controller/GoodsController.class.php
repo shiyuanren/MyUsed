@@ -5,10 +5,21 @@ class GoodsController extends Controller {
 
     public function detail(){
     	$id=I('id',0,'int');
+
+      // dump($id);die;
     	$info = D('Goods')->getGoodsById($id);
 
     	$this->assign('goods_info',$info);
     	$this->display();
+    }
+
+    public function delete(){
+      $id=I('id',0,'int');
+      if(M('Goods')->where('id=%d',$id)->delete()){
+        $this->success("删除完成");
+      }else{
+        $this->error("操作失败");
+      }
     }
 
 
