@@ -1,0 +1,30 @@
+[ 2015-05-15T16:35:32+08:00 ] 127.0.0.1 /MyUsed/img/uploadify-cancel.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Img
+
+[ 2015-05-15T17:03:05+08:00 ] 127.0.0.1 /MyUsed/Uploads/%7Bimage%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+ERR: 无法加载模块:Uploads
+
+[ 2015-05-15T17:03:06+08:00 ] 127.0.0.1 /MyUsed/Uploads/%7Bimage%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Uploads
+
+[ 2015-05-15T17:03:07+08:00 ] 127.0.0.1 /MyUsed/Uploads/%7Bimage%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Uploads
+
+[ 2015-05-15T17:03:11+08:00 ] 127.0.0.1 /MyUsed/Uploads/%7Bimage%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Uploads
+

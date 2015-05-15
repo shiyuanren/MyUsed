@@ -42,10 +42,11 @@ table{
   rules:none;
   border: 1px solid #F3F3FA;
   background:#F0F0F0;
-  }
-/*th,td{border-right:1px solid #888;border-bottom:1px solid #888;padding:5px 15px;}
-th{font-weight:bold;background:#ccc;}*/
+}
 
 table:hover {
     border: 1px solid #6C6C6C;
 }
+
+
+.info{float:left;list-style:none;width:33%;text-align:left;}

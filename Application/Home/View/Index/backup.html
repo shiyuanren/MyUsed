@@ -1,0 +1,217 @@
+<extend name='Public:base1'/>
+
+<block name="navbar">
+	<div class="navbar-collapse  collapse">
+	</br>
+	<ul class="nav navbar-nav navbar-right scroll">
+			<li class="active"><a href="{:U('Home/Index/index')}">Home</a></li>
+			<li><a href="{:U('Home/User/mybooks')}">My Books</a></li>
+			<!-- <li><a href="#contact">Contact</a></li> -->
+			<li><a href="{:U('Home/User/login')}">Sign In</a></li>
+			<li><a href="#"></a></li>
+
+			<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+
+						<if condition="!empty($_SESSION['user_name'])" >
+							{$Think.session.user_name}
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="{:U('Home/User/mybooks')}">My UsedBooks</a></li>
+								<li><a href="{:U('Home/Goods/release')}">Release Books</a></li>
+								<li><a href="{:U('Home/User/accouts')}">Account Settings</a></li>
+								<li class="divider"></li>
+								<li><a href="{:U('Home/User/logout')}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>Log Out</a></li>
+							</ul>
+						<else/>
+								Account
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li class="disabled"><a href="#">My UsedBooks</a></li>
+								<li class="disabled"><a href="#">Release Books</a></li>
+								<li class="disabled"><a href="#">Account Settings</a></li>
+								<li class="divider"></li>
+								<li><a href="{:U('Home/User/logout')}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>Log Out</a></li>
+							</ul>
+						</if>
+			</li>
+	</ul>
+</div>
+</block>
+
+<block name="middle">
+
+	<script src="__JS__/image.js"></script>
+	<script type="text/javascript" src="__WORTHY__/plugins/jquery.min.js"></script>
+<!-- section start -->
+<!-- ================ -->
+<div class="section">
+	<div class="container">
+
+		<div class="row">
+			<foreach name="goods_list.lists" item="gl">
+				<div class="col-xs-6 col-lg-3">
+					<div style="text-align:center;height:220px;width:200px;border:1px solid #ddd">
+						<empty name="gl.photo">
+							<img class="img-thumbnail" src="__UPLOADS__/avatar-80.png"
+							onload="AutoResizeImage(262.5,175,this)" alt="">
+							<else/>
+							<img class="img-thumbnail" src="__UPLOADS__/{$gl.photo}"
+							onload="AutoResizeImage(262.5,175,this)" alt="">
+						</empty>
+						<a class="overlay" data-toggle="modal" data-target="#{$gl.id}">
+							<i class="fa fa-search-plus"></i>
+							<span>{$gl.product_name}</span>
+						</a>
+						<!-- <a class="btn btn-default btn-block" data-toggle="modal" data-target="#{$gl.id}">{$gl.product_name}</a> -->
+						<p><a class="btn btn-default btn-block" data-toggle="modal" data-target="#{$gl.id}" role="button">{$gl.product_name} &raquo;</a></p>
+					</div>
+				</div>
+			</foreach>
+		</div><!--/row-->
+
+		<div class="row">
+			<div class="col-md-5"></div>
+			<div class="col-md-6">
+				{$goods_list.page}
+			</div>
+		</div>
+
+		<!-- <h1 class="text-center title" id="portfolio">Portfolio</h1>
+		<div class="separator"></div>
+		<p class="lead text-center">Lorem ipsum dolor sit amet laudantium molestias similique.<br> Quisquam incidunt ut laboriosam.</p>
+		<br> -->
+		<div class="row object-non-visible" data-animation-effect="fadeIn">
+			<div class="col-md-12">
+				<div class="isotope-container row grid-space-20">
+					<foreach name="goods_list.lists" item="gl">
+
+						<div class="col-sm-6 col-md-3 isotope-item web-design">
+							<div class="image-box">
+								<div class="overlay-container">
+									<empty name="gl.photo">
+										<img class="img-thumbnail" src="__UPLOADS__/avatar-80.png"
+											onload="AutoResizeImage(262.5,175,this)" alt="">
+									<else/>
+									<img class="img-thumbnail" src="__UPLOADS__/{$gl.photo}"
+										onload="AutoResizeImage(262.5,175,this)" alt="">
+									</empty>
+
+
+									<a class="overlay" data-toggle="modal" data-target="#{$gl.id}">
+										<i class="fa fa-search-plus"></i>
+										<span>{$gl.product_name}</span>
+									</a>
+								</div>
+								<a class="btn btn-default btn-block" data-toggle="modal" data-target="#{$gl.id}">{$gl.product_name}</a>
+							</div>
+
+
+							<!-- Modal -->
+							<div class="modal fade" id="{$gl.id}" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
+								<div class="modal-dialog modal-lg">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+											<h4 class="modal-title" id="project-1-label">{$gl.product_name}</h4>
+										</div>
+										<div class="modal-body">
+											<h3>Product Description</h3>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="detail">
+														<ul>
+
+															<li>商品：{$gl.product_name}</li>
+															<li>估价：￥{$gl.price}</li>
+															<li>数量：{$gl.quantity}</li>
+															<li>描述：{$gl.description}</li>
+															<li>联系人：{$gl.seller}</li>
+															<li>手机号：{$gl.sellerphone}</li>
+															<li>微信：{$gl.wechat}</li>
+															<li>上架时间: {$gl.create_time|date="Y-m-d H:i:s",###}</li>
+
+														</ul>
+													</div>
+												</div>
+												<div class="col-md-6">
+
+
+													<!--图片滑动-->
+													<div id="{$gl.product_name}" class="carousel slide">
+
+														<ol class="carousel-indicators">
+															<li data-target="#{$gl.product_name}" data-slide-to="0" class="active"></li>
+
+															<for start="0" end="$gl.images_count">
+																<li data-target="#{$gl.product_name}" data-slide-to="{$i+1}"></li>
+															</for>
+														</ol>
+														<!-- Carousel items-->
+														<div class="carousel-inner">
+
+															<div class="active item"><img class="img-rounded" src="__UPLOADS__/{$gl.avater}"  onload="AutoResizeImage(539,300,this)" alt="">
+															</div>
+															<foreach name="gl['images']" item="image">
+
+																<div class="item"><img class="img-rounded" src="__UPLOADS__/{$image}" onload="AutoResizeImage(539,300,this)" alt=""></div>
+
+															</foreach>
+
+														</div>
+
+														<a class="left carousel-control" href="#{$gl.product_name}" role="button" data-slide="prev">
+															<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+															<span class="sr-only">Previous</span>
+														</a>
+														<a class="right carousel-control" href="#{$gl.product_name}" role="button" data-slide="next">
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+															<span class="sr-only">Next</span>
+														</a>
+													</div>
+
+
+												</div>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Modal end -->
+						</div>
+
+					</foreach>
+
+				</div>
+				<!-- portfolio items end -->
+				<div class="row">
+					<div class="col-md-5"></div>
+					<div class="col-md-6">
+						{$goods_list.page}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+/* center modal */
+function centerModals(){
+	$('.modal').each(function(i){
+		var $clone = $(this).clone().css('display', 'block').appendTo('body');
+		var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2)-50;
+		top = top > 0 ? top : 0;
+		$clone.remove();
+		$(this).find('.modal-content').css("margin-top", top);
+	});
+}
+$('.modal').on('show.bs.modal', centerModals);
+$(window).on('resize', centerModals);
+</script>
+<!-- section end -->
+</block>

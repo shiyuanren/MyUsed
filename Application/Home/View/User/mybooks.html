@@ -40,6 +40,10 @@
 </block>
 
 <block name="middle">
+	<!-- Custom CSS -->
+	<link href="__CSS__/agency.css" rel="stylesheet">
+
+
 	<link href="__CSS__/mybooks.css" rel="stylesheet">
 	<script type="text/javascript" src="__WORTHY__/plugins/jquery.min.js"></script>
 
@@ -90,38 +94,82 @@
 					<table> -->
 					<tr>
 						<td class="photo-td">
-							<div style="height:130xp;width:130px;border:1px solid #ddd">
-								<empty name="info.photo">
-									<img class="img-thumbnail" src="__UPLOADS__/avatar-80.png" alt="">
-									<else/>
-									<img class="img-thumbnail" src="__UPLOADS__/{$info.photo}" alt="">
-								</empty>
-							</div>
+							<a href="#{$info.id}" class="portfolio-link" data-toggle="modal">
+								<div style="height:130xp;width:130px;border:1px solid #ddd">
+									<empty name="info.photo">
+										<img class="img-thumbnail" src="__UPLOADS__/avatar-80.png" alt="">
+										<else/>
+										<img class="img-thumbnail" src="__UPLOADS__/{$info.photo}" alt="">
+									</empty>
+								</div>
+							</a>
 						</td>
 						<td class="photo-desp">{$info.description}</td>
 						<td class="price-td">{$info.price}</td>
 						<td class="quantity-td">{$info.quantity}</td>
 
 						<td class="action-td">
-							<!-- <a href="{:U('Goods/detail',array('id'=>$info.id))}" class="button" role="button">详情</a>
-							<a href="{:U('Category/addCategory')}">编辑</a>
-							<a href="{:U('Category/addCategory')}">删除</a> -->
-
-							<a title="查看" href="{:U('Home/Goods/detail',array('id'=>$info['id'],))}"><span class="glyphicon glyphicon-zoom-in"></span></a>&nbsp;&nbsp;
+							<a title="查看" href="#{$info.id}" class="portfolio-link" data-toggle="modal"><span class="glyphicon glyphicon-zoom-in"></span></a>&nbsp;&nbsp;
 							<!-- <a title="编辑" href="{:U('Home/Goods/edit',array('id'=>$info['id'],))}"><span class="glyphicon glyphicon-edit"></span></a>&nbsp;&nbsp; -->
 							<a title="删除" href="{:U('Home/Goods/delete',array('id'=>$info['id'],))}"><span class="glyphicon glyphicon-trash"></span></a>&nbsp;&nbsp;
 						</td>
 					</tr>
 				</table>
+
+				<!--  Modal -->
+				<div class="portfolio-modal modal fade" id="{$info.id}" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-content">
+						<div class="close-modal" data-dismiss="modal">
+							<div class="lr">
+								<div class="rl">
+								</div>
+							</div>
+						</div>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-8 col-lg-offset-2">
+									<div class="modal-body">
+										<div class="row">
+											<h3>{$info.product_name}</h3></br>
+											<div style="text-align:left;">
+												<b style="margin-left:120px;">商品信息</b>
+												<ul style="margin-left:110px;margin-right:70px;">
+													<li class="info">名称:{$info.product_name}</li>
+													<li class="info">估价:{$info.price}元</li>
+													<li class="info">数量:{$info.quantity}</li>
+													<li class="info">分类:{$info.category}</li>
+													<li class="info">详细信息:{$info.description}</li>
+												</ul></br></br>
+
+												<b style="margin-left:120px;">卖家信息</b>
+												<ul style="margin-left:110px;margin-right:70px;">
+													<li class="info">联系人:{$info.seller}</li>
+													<li class="info">手机号:{$info.sellerphone}</li>
+													<li class="info">微信号:{$info.wechat}</li>
+												</ul>
+											</div>
+
+											<div align="center">
+											</br></br></br>
+											<foreach name="info['images']" item="image">
+												<img class="img-rounded" src="__UPLOADS__/{$image}" alt="">
+											</foreach>
+										</div>
+											<!-- <img class="img-responsive img-centered" src="img/portfolio/treehouse-preview.png" alt=""> -->
+											<button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--End Modal -->
+
 			</foreach>
 			{$booksList.page}
 		</div>
-
-		<!-- <div class="panel-footer">
-			<div class="col-md-3"></div>
-			{$booksList.page}
-		</div> -->
-
-	</div>
 </div>
+</div>
+
 </block>

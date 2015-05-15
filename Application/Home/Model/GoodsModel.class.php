@@ -26,7 +26,7 @@ class GoodsModel extends Model {
     	$show=$Page->show();
      	$data=$this->order('create_time DESC')->page($page.','.$limit)->select();
 
-        $count=count($data);
+       $count=count($data);
 
         for($i=0;$i<$count;$i++){
             $pid=$data[$i]['id'];
@@ -74,6 +74,20 @@ class GoodsModel extends Model {
         $show=$Page->show();
 
 
+        $count=count($data);
+
+         for($i=0;$i<$count;$i++){
+             $pid=$data[$i]['id'];
+             $images=M('Image')->where('product_id=%d',$pid)->getField('image_id,image');
+             //dump($images);
+             $data[$i]['images']=$images;
+             $data[$i]['avater']=str_replace('/s_','/',$data[$i]['photo']);
+             //dump($data[$i]['avater']);
+             $data[$i]['images_count']=count($images);
+         }
+
+
+
         return array(
             'books'=> $data,
             'page' => $show,
@@ -98,9 +112,18 @@ class GoodsModel extends Model {
       $Page=new \Think\Page($count,$limit);
       $show=$Page->show();
 
+      $count=count($data);
 
+       for($i=0;$i<$count;$i++){
+           $pid=$data[$i]['id'];
+           $images=M('Image')->where('product_id=%d',$pid)->getField('image_id,image');
+           //dump($images);
+           $data[$i]['images']=$images;
+           $data[$i]['avater']=str_replace('/s_','/',$data[$i]['photo']);
+           //dump($data[$i]['avater']);
+           $data[$i]['images_count']=count($images);
+       }
 
-      dump($this->getLastSql());
 
 
       return array(
